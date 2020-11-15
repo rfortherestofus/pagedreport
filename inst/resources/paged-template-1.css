@@ -11,7 +11,7 @@
     --color-mbox: rgba(0, 0, 0, 0.2);
     --running-title-width: 2.5in;
     --screen-pages-spacing: 5mm;
-    --main-color: #741336;
+    --main-color: #c78039;
   }
   
 /* ---------------------- For debugging -------------------- */
@@ -59,7 +59,7 @@ body {
     /* numbering */
     @bottom-right {
         content: counter(page);
-        color: #000000;
+        color: var(--main-color);
     }
 }
 
@@ -79,7 +79,7 @@ body {
 /* ------------------------ Back Cover ---------------------- */
 .pagedjs_page:last-of-type {
     margin: 0 0 0 0;
-    background-color: #123456;
+    background-color: var(--main-color);
     background-image: var(--back-cover);
     background-repeat: no-repeat;
     background-position: 15cm 23cm;
@@ -104,6 +104,14 @@ h1, h2, h3, h4 {
 }
 
 /* ------------------------ Style ----------------------------- */
+/* colors */
+h1, h2, h3, h4 { 
+    color: var(--main-color)
+}
+
+h1.title, h1.subtitle, h2.author, h2.date {
+    color: #ffffff;
+}
 
 /* --------------------- CSS Fragmentation --------------------------- */
 /* page breaks; aka CSS fragmentation */
