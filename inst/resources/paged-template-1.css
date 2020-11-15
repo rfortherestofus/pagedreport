@@ -86,14 +86,22 @@ body {
     background-size: 4cm;
   }
 
-
 /* avoiding counter to be printed */
 .pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-bottom-right {
     display: none;
   }
 
 /* ------------------------ Fonts ---------------------------- */
+@import 'https://fonts.googleapis.com/css?family=Gelasio';
+@import 'https://fonts.googleapis.com/css?family=Inter';
 
+p, ul, a {
+    font-family: "Gelasio";
+}
+
+h1, h2, h3, h4 {
+    font-family: "Inter";
+}
 
 /* ------------------------ Style ----------------------------- */
 
