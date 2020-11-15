@@ -194,7 +194,7 @@ h1.title {
 @import 'https://fonts.googleapis.com/css?family=Gelasio';
 @import 'https://fonts.googleapis.com/css?family=Inter';
 
-p, ul, a {
+p, ul, a, h1.subtitle, h2.author, h2.date {
     font-family: "Gelasio";
 }
 
@@ -210,6 +210,39 @@ h1, h2, h3, h4 {
 
 h1.title, h1.subtitle, h2.author, h2.date {
     color: #ffffff;
+}
+
+/* headers */
+h1.title {
+  font-size: 50pt;
+  margin-right: 15%;
+  font-weight: 900;
+}
+
+h1.subtitle {
+  margin-right: 15%;
+}
+
+h2.author {
+  margin-top: 70%;
+}
+
+h2.date {
+
+}
+
+/* normal headers */
+h1 {
+  font-size: 40pt;
+}
+
+h2 {
+  font-size: 24pt;
+}
+
+/* text */
+p, ul {
+  margin-right: 15%;
 }
 
 /* --------------------- CSS Fragmentation --------------------------- */
