@@ -77,6 +77,20 @@ body {
     }
   }
 /* ------------------------ Back Cover ---------------------- */
+.pagedjs_page:last-of-type {
+    margin: 0 0 0 0;
+    background-color: #123456;
+    background-image: var(--back-cover);
+    background-repeat: no-repeat;
+    background-position: 15cm 23cm;
+    background-size: 4cm;
+  }
+
+
+/* avoiding counter to be printed */
+.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-bottom-right {
+    display: none;
+  }
 
 /* ------------------------ Fonts ---------------------------- */
 

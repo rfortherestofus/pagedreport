@@ -7,6 +7,7 @@ output:
   pagedown::html_paged:
     css: "../../../../resources/paged-template-1.css"
     front_cover: ["../../../../resources/square-logo.svg", "../../../../resources/windmill-img.jpg"]
+    back_cover: "../../../../resources/square-logo.svg"
 knit: pagedown::chrome_print
 ---
 
