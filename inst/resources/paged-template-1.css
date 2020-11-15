@@ -1,0 +1,116 @@
+/* --------------------------------- */
+/* CSS template for paged template 1 */
+/* --------------------------------- */
+
+/* -------------------- CSS variables ---------------------- */
+:root {
+    --background: whitesmoke;
+    --pagedjs-width: 210mm;
+    --pagedjs-height: 297mm;
+    --color-paper: white;
+    --color-mbox: rgba(0, 0, 0, 0.2);
+    --running-title-width: 2.5in;
+    --screen-pages-spacing: 5mm;
+    --main-color: #741336;
+  }
+  
+/* ---------------------- For debugging -------------------- */
+/* two pages in a row if possible on screen */
+@media screen {
+body {
+    background-color: var(--background);
+    margin: var(--screen-pages-spacing) auto 0 auto;
+}
+.pagedjs_pages {
+    display: flex;
+    max-width: calc(var(--pagedjs-width) * 2);
+    flex: 0;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+.pagedjs_page {
+    background-color: var(--color-paper);
+    box-shadow: 0 0 0 1px var(--color-mbox);
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin: auto auto var(--screen-pages-spacing) auto;
+}
+}
+
+/* when a row can hold two pages, start first page on the right */
+@media screen and (min-width: 12.32in) {
+.pagedjs_page {
+    margin: auto 0 var(--screen-pages-spacing) 0;
+}
+.pagedjs_first_page {
+    margin-left: var(--pagedjs-width);
+}
+}
+
+/* ------------------------ Pages -------------------------- */
+/* page size */
+@page {
+    size: 210mm 297mm; /* var(--pagedjs-width) doesn't work in browser when printing */
+  }
+
+/* normal page */
+@page {
+
+    /* numbering */
+    @bottom-right {
+        content: counter(page);
+        color: #000000;
+    }
+}
+
+/* ------------------------ Front Cover --------------------- */
+@page:first{
+    margin: 0 0 0 0;
+    background-color: #ffffff;
+    background-image: var(--front-cover), var(--front-cover-2);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 15cm 23cm, 0cm 0cm;
+    background-size: 4cm, cover;  
+
+    @bottom-right {
+      content: "";
+    }
+  }
+/* ------------------------ Back Cover ---------------------- */
+
+/* ------------------------ Fonts ---------------------------- */
+
+
+/* ------------------------ Style ----------------------------- */
+
+/* --------------------- CSS Fragmentation --------------------------- */
+/* page breaks; aka CSS fragmentation */
+.level1 {
+    page: chapter;
+  }
+  
+  .section > h1, .section > h2, .section > h3, .section > h4, .section > h5, .section > h6 {
+    break-after: avoid;
+  }
+  .footenotes {
+    break-before: always;
+    break-after: always;
+  }
+  .figure {
+    break-inside: avoid;
+  }
+  
+  /* do not break captions */
+  caption {
+    break-inside: avoid;
+    break-after: avoid;
+  }
+  
+  /* misc elements */
+  .subtitle span {
+    font-size: .9em;
+  }
+  img {
+    max-width: 100%;
+  }
+  
