@@ -17,34 +17,34 @@
 /* ---------------------- For debugging -------------------- */
 /* two pages in a row if possible on screen */
 @media screen {
-body {
-    background-color: var(--background);
-    margin: var(--screen-pages-spacing) auto 0 auto;
-}
-.pagedjs_pages {
-    display: flex;
-    max-width: calc(var(--pagedjs-width) * 2);
-    flex: 0;
-    flex-wrap: wrap;
-    margin: 0 auto;
-}
-.pagedjs_page {
-    background-color: var(--color-paper);
-    box-shadow: 0 0 0 1px var(--color-mbox);
-    flex-shrink: 0;
-    flex-grow: 0;
-    margin: auto auto var(--screen-pages-spacing) auto;
-}
+  body {
+      background-color: var(--background);
+      margin: var(--screen-pages-spacing) auto 0 auto;
+  }
+  .pagedjs_pages {
+      display: flex;
+      max-width: calc(var(--pagedjs-width) * 2);
+      flex: 0;
+      flex-wrap: wrap;
+      margin: 0 auto;
+  }
+  .pagedjs_page {
+      background-color: var(--color-paper);
+      box-shadow: 0 0 0 1px var(--color-mbox);
+      flex-shrink: 0;
+      flex-grow: 0;
+      margin: auto auto var(--screen-pages-spacing) auto;
+  }
 }
 
 /* when a row can hold two pages, start first page on the right */
 @media screen and (min-width: 12.32in) {
-.pagedjs_page {
-    margin: auto 0 var(--screen-pages-spacing) 0;
-}
-.pagedjs_first_page {
-    margin-left: var(--pagedjs-width);
-}
+  .pagedjs_page {
+      margin: auto 0 var(--screen-pages-spacing) 0;
+  }
+  .pagedjs_first_page {
+      margin-left: var(--pagedjs-width);
+  }
 }
 
 /* ------------------------ Pages -------------------------- */
@@ -53,10 +53,53 @@ body {
     size: 210mm 297mm; /* var(--pagedjs-width) doesn't work in browser when printing */
   }
 
+
+/* string variables */
+h1.title {
+  string-set: h1-title content(text);
+}
+
+.shorttitle1 {
+  string-set: h1-text content(text);
+}
+
 /* normal page */
 @page {
 
+  @top-left-corner {
+    content: "";
+    border-bottom: 5px solid var(--main-color);
+    margin-bottom: 0.7cm;
+  }
 
+  @top-left {
+    content: string(h1-title);
+    font-family: "Inter";
+    font-weight: bold;
+    color: var(--main-color);
+    border-bottom: 5px solid var(--main-color);
+    margin-bottom: 0.7cm;
+  }
+  
+  @top-center {
+    content: "";
+    border-bottom: 5px solid var(--main-color);
+    margin-bottom: 0.7cm;
+  }
+
+  @top-right {
+    content: string(h1-text);
+    font-family: "Inter";
+    color: var(--main-color);
+    border-bottom: 5px solid var(--main-color);
+    margin-bottom: 0.7cm;
+  }
+
+  @top-right-corner {
+    content: "";
+    border-bottom: 5px solid var(--main-color);
+    margin-bottom: 0.7cm;
+  }
 }
 
 /* counter */
@@ -94,7 +137,6 @@ body {
     }
 }
 
-
 /* ------------------------ Front Cover --------------------- */
 @page:first{
     margin: 0 0 0 0;
@@ -104,6 +146,26 @@ body {
     background-position: 15cm 23cm, 0cm 0cm;
     background-size: 4cm, cover;  
 
+    @top-left-corner {
+      display: none;
+    }
+  
+    @top-left {
+      display: none;
+    }
+    
+    @top-center {
+      display: none;
+    }
+  
+    @top-right {
+      display: none;
+    }
+  
+    @top-right-corner {
+      display: none;
+    }
+
     @bottom-right {
       display: none;
     }
@@ -112,6 +174,7 @@ body {
       display: none;
     }
   }
+
 /* ------------------------ Back Cover ---------------------- */
 .pagedjs_page:last-of-type {
     margin: 0 0 0 0;
