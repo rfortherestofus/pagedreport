@@ -56,12 +56,44 @@ body {
 /* normal page */
 @page {
 
+
+}
+
+/* counter */
+@page:left {
+
     /* numbering */
     @bottom-right {
         content: counter(page);
         color: var(--main-color);
+        border: 5px solid var(--main-color);
+        margin-left: 15cm;
+        margin-right: -3cm;
+        padding-left: 1cm;
+        padding-right: 3cm;
+        margin-bottom: 1cm;
+        font-size: 14pt;
+        font-weight: bold;
     }
 }
+
+@page:right {
+
+    /* numbering */
+    @bottom-left {
+      content: counter(page);
+      color: var(--main-color);
+      border: 5px solid var(--main-color);
+      margin-right: 15cm;
+      margin-left: -3cm;
+      padding-right: 1cm;
+      padding-left: 3cm;
+      margin-bottom: 1cm;
+      font-size: 14pt;
+      font-weight: bold;
+    }
+}
+
 
 /* ------------------------ Front Cover --------------------- */
 @page:first{
@@ -73,7 +105,11 @@ body {
     background-size: 4cm, cover;  
 
     @bottom-right {
-      content: "";
+      display: none;
+    }
+
+    @bottom-left {
+      display: none;
     }
   }
 /* ------------------------ Back Cover ---------------------- */
