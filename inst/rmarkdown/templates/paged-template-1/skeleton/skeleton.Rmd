@@ -6,9 +6,11 @@ date: "Date"
 output: 
   pagedown::html_paged:
     css: "../../../../resources/paged-template-1.css"
-    front_cover: ["../../../../resources/square-logo.svg", "../../../../resources/windmill-img.jpg"]
-    back_cover: "../../../../resources/square-logo.svg"
+    front_cover: ["../../../../resources/dots-logo.svg", "../../../../resources/abstract-img.jpg"]
+    back_cover: "../../../../resources/dots-logo.svg"
+    template: "../../../../resources/template_windmill.html"
 knit: pagedown::chrome_print
+main-color: "#abcde6"
 ---
 
 ```{r setup, include=FALSE}
