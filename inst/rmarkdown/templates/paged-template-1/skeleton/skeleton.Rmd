@@ -4,13 +4,11 @@ subtitle: "Subtitle of the report"
 author: "Author Name"
 date: "Date"
 output: 
-  pagedown::html_paged:
-    css: "../../../../resources/css/style_windmill.css"
-    front_cover: ["../../../../resources/logo/dots-logo.svg", "../../../../resources/img/abstract-img.jpg"]
-    back_cover: "../../../../resources/logo/dots-logo.svg"
-    template: "../../../../resources/html/template_windmill.html"
+  pagedowntemplate::paged_windmill:
+    img: "../../../../resources/img/abstract-img.jpg"
+    logo: "../../../../resources/logo/circle-logo.svg"
 knit: pagedown::chrome_print
-main-color: "#abcde6"
+main-color: "#aa2266"
 ---
 
 ```{r setup, include=FALSE}
