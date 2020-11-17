@@ -4,12 +4,21 @@
 \alias{paged_windmill}
 \title{Function for windmill template}
 \usage{
-paged_windmill(logo = "0", img = "0")
+paged_windmill(
+  logo = "0",
+  img = "0",
+  img_to_dark = TRUE,
+  logo_to_white = FALSE
+)
 }
 \arguments{
 \item{logo}{Logo}
 
 \item{img}{Image}
+
+\item{img_to_dark}{Darken image}
+
+\item{logo_to_white}{Tranform logo color to white}
 }
 \value{
 A pagedown template
