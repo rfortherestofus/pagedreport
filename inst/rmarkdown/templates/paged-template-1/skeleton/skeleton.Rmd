@@ -5,10 +5,10 @@ author: "Author Name"
 date: "Date"
 output: 
   pagedown::html_paged:
-    css: "../../../../resources/paged-template-1.css"
-    front_cover: ["../../../../resources/dots-logo.svg", "../../../../resources/abstract-img.jpg"]
-    back_cover: "../../../../resources/dots-logo.svg"
-    template: "../../../../resources/template_windmill.html"
+    css: "../../../../resources/css/style_windmill.css"
+    front_cover: ["../../../../resources/logo/dots-logo.svg", "../../../../resources/img/abstract-img.jpg"]
+    back_cover: "../../../../resources/logo/dots-logo.svg"
+    template: "../../../../resources/html/template_windmill.html"
 knit: pagedown::chrome_print
 main-color: "#abcde6"
 ---
