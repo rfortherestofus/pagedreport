@@ -13,7 +13,7 @@
     --screen-pages-spacing: 5mm;
     --main-color: #c78039;
   }
-  
+
 /* ---------------------- For debugging -------------------- */
 /* two pages in a row if possible on screen */
 @media screen {
@@ -80,7 +80,7 @@ h1.title {
     border-bottom: 5px solid var(--main-color);
     margin-bottom: 0.7cm;
   }
-  
+
   @top-center {
     content: "";
     border-bottom: 5px solid var(--main-color);
@@ -144,24 +144,24 @@ h1.title {
     background-image: var(--front-cover), var(--front-cover-2);
     background-repeat: no-repeat, no-repeat;
     background-position: 15cm 23cm, 0cm 0cm;
-    background-size: 4cm, cover;  
+    background-size: 4cm, cover;
 
     @top-left-corner {
       display: none;
     }
-  
+
     @top-left {
       display: none;
     }
-    
+
     @top-center {
       display: none;
     }
-  
+
     @top-right {
       display: none;
     }
-  
+
     @top-right-corner {
       display: none;
     }
@@ -192,19 +192,25 @@ h1.title {
 
 /* ------------------------ Fonts ---------------------------- */
 @import 'https://fonts.googleapis.com/css?family=Gelasio';
-@import 'https://fonts.googleapis.com/css?family=Inter';
+
+
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
 
 p, ul, a, h1.subtitle, h2.author, h2.date {
     font-family: "Gelasio";
 }
 
 h1, h2, h3, h4 {
-    font-family: "Inter";
+    font-family: "Inter var";
 }
 
 /* ------------------------ Style ----------------------------- */
 /* colors */
-h1, h2, h3, h4 { 
+h1, h2, h3, h4 {
     color: var(--main-color)
 }
 
@@ -216,19 +222,21 @@ h1.title, h1.subtitle, h2.author, h2.date {
 h1.title {
   font-size: 50pt;
   margin-right: 15%;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 h1.subtitle {
   margin-right: 15%;
+  font-size: 25pt;
 }
 
 h2.author {
   margin-top: 70%;
+  font-size: 25pt;
 }
 
 h2.date {
-
+  font-size: 25pt;
 }
 
 /* normal headers */
@@ -250,7 +258,7 @@ p, ul {
 .level1 {
     page: chapter;
   }
-  
+
   .section > h1, .section > h2, .section > h3, .section > h4, .section > h5, .section > h6 {
     break-after: avoid;
   }
@@ -261,13 +269,13 @@ p, ul {
   .figure {
     break-inside: avoid;
   }
-  
+
   /* do not break captions */
   caption {
     break-inside: avoid;
     break-after: avoid;
   }
-  
+
   /* misc elements */
   .subtitle span {
     font-size: .9em;
@@ -275,4 +283,3 @@ p, ul {
   img {
     max-width: 100%;
   }
-  
