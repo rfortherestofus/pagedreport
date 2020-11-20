@@ -6,7 +6,12 @@ date: "Date"
 output: 
   pagedown::html_paged:
     css: "../../../../resources/css/style_nuts.css"
+    front_cover: ["../../../../resources/logo/square-logo.svg", "../../../../resources/img/nuts-img.jpg"]
+    back_cover: ["../../../../resources/logo/square-logo.svg", "../../../../resources/img/hazelnuts-img.jpg"]
+    toc: TRUE
 knit: pagedown::chrome_print
+main-color: "#6cabdd"
+secondary-color: "#aabbcc"
 ---
 
 ```{r setup, include=FALSE}

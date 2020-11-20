@@ -1,5 +1,5 @@
 /* --------------------------------- */
-/* CSS template for paged template 1 */
+/* CSS template for paged nuts */
 /* --------------------------------- */
 
 /* -------------------- CSS variables ---------------------- */
@@ -11,7 +11,8 @@
     --color-mbox: rgba(0, 0, 0, 0.2);
     --running-title-width: 2.5in;
     --screen-pages-spacing: 5mm;
-    --main-color: #c78039;
+    --main-color: #724c25;
+    --secondart-color: #346aa0;
   }
   
 /* ---------------------- For debugging -------------------- */
@@ -66,72 +67,38 @@ h1.title {
 /* normal page */
 @page {
 
-  @top-left-corner {
-    content: "";
-    border-bottom: 5px solid var(--main-color);
-    margin-bottom: 0.7cm;
-  }
-
-  @top-left {
-    content: string(h1-title);
-    font-family: "Inter";
-    font-weight: bold;
-    color: var(--main-color);
-    border-bottom: 5px solid var(--main-color);
-    margin-bottom: 0.7cm;
-  }
-  
-  @top-center {
-    content: "";
-    border-bottom: 5px solid var(--main-color);
-    margin-bottom: 0.7cm;
-  }
-
-  @top-right {
-    content: string(h1-text);
-    font-family: "Inter";
-    color: var(--main-color);
-    border-bottom: 5px solid var(--main-color);
-    margin-bottom: 0.7cm;
-  }
-
-  @top-right-corner {
-    content: "";
-    border-bottom: 5px solid var(--main-color);
-    margin-bottom: 0.7cm;
-  }
 }
 
 /* counter */
-@page:left {
+@page:right {
+
+    @top-center {
+      content: string(h1-title) " | ";
+      font-family: "Inter";
+      text-align: right;
+      margin-right: -15cm;
+    }
 
     /* numbering */
-    @bottom-right {
-        content: counter(page);
-        color: var(--main-color);
-        border: 5px solid var(--main-color);
-        margin-left: 15cm;
-        margin-right: -3cm;
-        padding-left: 1cm;
-        padding-right: 3cm;
-        margin-bottom: 1cm;
-        font-size: 14pt;
-        font-weight: bold;
+    @top-right {
+      content: counter(page);
+      font-size: 14pt;
+      font-weight: bold;
+      margin-left: 0cm;
     }
 }
 
-@page:right {
+@page:left {
+
+    @top-center {
+      content: " | " string(h1-text);
+      font-family: "Inter";
+      margin-left: 1cm;
+    }
 
     /* numbering */
-    @bottom-left {
+    @top-left {
       content: counter(page);
-      color: var(--main-color);
-      border: 5px solid var(--main-color);
-      margin-right: 15cm;
-      margin-left: -3cm;
-      padding-right: 1cm;
-      padding-left: 3cm;
-      margin-bottom: 1cm;
       font-size: 14pt;
       font-weight: bold;
     }
@@ -143,8 +110,8 @@ h1.title {
     background-color: #ffffff;
     background-image: var(--front-cover), var(--front-cover-2);
     background-repeat: no-repeat, no-repeat;
-    background-position: 15cm 23cm, 0cm 0cm;
-    background-size: 4cm, cover;  
+    background-position: 4cm 24cm, 0cm 0cm;
+    background-size: 3cm, cover;  
 
     @top-left-corner {
       display: none;
@@ -186,15 +153,25 @@ h1.title {
   }
 
 /* avoiding counter to be printed */
-.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-bottom-right {
+.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-top-right {
     display: none;
   }
+
+.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-top-center {
+    display: none;
+  }
+
+
+.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-top-left {
+    display: none;
+  }
+
 
 /* ------------------------ Fonts ---------------------------- */
 @import 'https://fonts.googleapis.com/css?family=Gelasio';
 @import 'https://fonts.googleapis.com/css?family=Inter';
 
-p, ul, a, h1.subtitle, h2.author, h2.date {
+p, ul, a, h2.author, h2.date {
     font-family: "Gelasio";
 }
 
@@ -208,7 +185,7 @@ h1, h2, h3, h4 {
     color: var(--main-color)
 }
 
-h1.title, h1.subtitle, h2.author, h2.date {
+h1.title, h2.author, h2.date {
     color: #ffffff;
 }
 
@@ -216,11 +193,26 @@ h1.title, h1.subtitle, h2.author, h2.date {
 h1.title {
   font-size: 50pt;
   margin-right: 15%;
+  margin-left: 15%;
+  margin-top: 50%;
+  text-align: center;
   font-weight: 900;
 }
 
 h1.subtitle {
-  margin-right: 15%;
+  text-transform: uppercase;
+  color: #000000;
+  font-size: 14pt;
+  font-weight: 900;
+  background: linear-gradient(45deg, transparent, #ffffff, #ffffff);
+  margin-top: -70%;
+  margin-left: 40%;
+  margin-right: -20%;
+  padding-left: 2cm;
+  padding-right: 0.5cm;
+  padding-top: 0.5cm;
+  padding-bottom: 0.5cm;
+}
 }
 
 h2.author {
