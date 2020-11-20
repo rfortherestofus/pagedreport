@@ -2,5 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
-inst/rmarkdown/templates/paged-template-1/skeleton/skeleton.pdf
-inst/rmarkdown/templates/paged-template-1/skeleton/skeleton.html
+inst/rmarkdown/templates/paged_windmill/skeleton/skeleton.pdf
+inst/rmarkdown/templates/paged_windmill/skeleton/skeleton.html
+inst/rmarkdown/templates/paged_nuts/skeleton/skeleton.pdf
+inst/rmarkdown/templates/paged_nuts/skeleton/skeleton.html

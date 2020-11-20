@@ -18,7 +18,7 @@ paged_windmill(
 
 \item{img_to_dark}{Darken image}
 
-\item{logo_to_white}{Tranform logo color to white}
+\item{logo_to_white}{Tranform logo color to white - logo must be SVG}
 }
 \value{
 A pagedown template

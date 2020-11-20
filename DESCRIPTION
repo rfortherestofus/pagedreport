@@ -1,19 +1,24 @@
 Package: pagedowntemplate
-Title: What the Package Does (One Line, Title Case)
+Title: Simplify the use of pagedown through templates
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    c(person(given = "Thomas",
+             family = "Vroylandt",
+             role = c("aut", "cre"),
+             email = "thomas@tillac-data.com"),
+      person(given = "David",
+             family = "Keyes",
+             role = "aut",
+             email = "david@rfortherestofus.com"))
+Description: This package allow people to use pre-formatted
+    template for pagedown.  It helps generating nice and well-design PDF
+    using Rmarkdown without diving into CSS.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to
     pick a license
+Imports:
+    magick,
+    pagedown
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-Imports:
-  pagedown,
-  magick

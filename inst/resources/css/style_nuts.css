@@ -1,0 +1,278 @@
+/* --------------------------------- */
+/* CSS template for paged template 1 */
+/* --------------------------------- */
+
+/* -------------------- CSS variables ---------------------- */
+:root {
+    --background: whitesmoke;
+    --pagedjs-width: 210mm;
+    --pagedjs-height: 297mm;
+    --color-paper: white;
+    --color-mbox: rgba(0, 0, 0, 0.2);
+    --running-title-width: 2.5in;
+    --screen-pages-spacing: 5mm;
+    --main-color: #c78039;
+  }
+  
+/* ---------------------- For debugging -------------------- */
+/* two pages in a row if possible on screen */
+@media screen {
+  body {
+      background-color: var(--background);
+      margin: var(--screen-pages-spacing) auto 0 auto;
+  }
+  .pagedjs_pages {
+      display: flex;
+      max-width: calc(var(--pagedjs-width) * 2);
+      flex: 0;
+      flex-wrap: wrap;
+      margin: 0 auto;
+  }
+  .pagedjs_page {
+      background-color: var(--color-paper);
+      box-shadow: 0 0 0 1px var(--color-mbox);
+      flex-shrink: 0;
+      flex-grow: 0;
+      margin: auto auto var(--screen-pages-spacing) auto;
+  }
+}
+
+/* when a row can hold two pages, start first page on the right */
+@media screen and (min-width: 12.32in) {
+  .pagedjs_page {
+      margin: auto 0 var(--screen-pages-spacing) 0;
+  }
+  .pagedjs_first_page {
+      margin-left: var(--pagedjs-width);
+  }
+}
+
+/* ------------------------ Pages -------------------------- */
+/* page size */
+@page {
+    size: 210mm 297mm; /* var(--pagedjs-width) doesn't work in browser when printing */
+  }
+
+
+/* string variables */
+h1.title {
+  string-set: h1-title content(text);
+}
+
+.shorttitle1 {
+  string-set: h1-text content(text);
+}
+
+/* normal page */
+@page {
+
+  @top-left-corner {
+    content: "";
+    border-bottom: 5px solid var(--main-color);
+    margin-bottom: 0.7cm;
+  }
+
+  @top-left {
+    content: string(h1-title);
+    font-family: "Inter";
+    font-weight: bold;
+    color: var(--main-color);
+    border-bottom: 5px solid var(--main-color);
+    margin-bottom: 0.7cm;
+  }
+  
+  @top-center {
+    content: "";
+    border-bottom: 5px solid var(--main-color);
+    margin-bottom: 0.7cm;
+  }
+
+  @top-right {
+    content: string(h1-text);
+    font-family: "Inter";
+    color: var(--main-color);
+    border-bottom: 5px solid var(--main-color);
+    margin-bottom: 0.7cm;
+  }
+
+  @top-right-corner {
+    content: "";
+    border-bottom: 5px solid var(--main-color);
+    margin-bottom: 0.7cm;
+  }
+}
+
+/* counter */
+@page:left {
+
+    /* numbering */
+    @bottom-right {
+        content: counter(page);
+        color: var(--main-color);
+        border: 5px solid var(--main-color);
+        margin-left: 15cm;
+        margin-right: -3cm;
+        padding-left: 1cm;
+        padding-right: 3cm;
+        margin-bottom: 1cm;
+        font-size: 14pt;
+        font-weight: bold;
+    }
+}
+
+@page:right {
+
+    /* numbering */
+    @bottom-left {
+      content: counter(page);
+      color: var(--main-color);
+      border: 5px solid var(--main-color);
+      margin-right: 15cm;
+      margin-left: -3cm;
+      padding-right: 1cm;
+      padding-left: 3cm;
+      margin-bottom: 1cm;
+      font-size: 14pt;
+      font-weight: bold;
+    }
+}
+
+/* ------------------------ Front Cover --------------------- */
+@page:first{
+    margin: 0 0 0 0;
+    background-color: #ffffff;
+    background-image: var(--front-cover), var(--front-cover-2);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 15cm 23cm, 0cm 0cm;
+    background-size: 4cm, cover;  
+
+    @top-left-corner {
+      display: none;
+    }
+  
+    @top-left {
+      display: none;
+    }
+    
+    @top-center {
+      display: none;
+    }
+  
+    @top-right {
+      display: none;
+    }
+  
+    @top-right-corner {
+      display: none;
+    }
+
+    @bottom-right {
+      display: none;
+    }
+
+    @bottom-left {
+      display: none;
+    }
+  }
+
+/* ------------------------ Back Cover ---------------------- */
+.pagedjs_page:last-of-type {
+    margin: 0 0 0 0;
+    background-color: var(--main-color);
+    background-image: var(--back-cover);
+    background-repeat: no-repeat;
+    background-position: 15cm 23cm;
+    background-size: 4cm;
+  }
+
+/* avoiding counter to be printed */
+.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-bottom-right {
+    display: none;
+  }
+
+/* ------------------------ Fonts ---------------------------- */
+@import 'https://fonts.googleapis.com/css?family=Gelasio';
+@import 'https://fonts.googleapis.com/css?family=Inter';
+
+p, ul, a, h1.subtitle, h2.author, h2.date {
+    font-family: "Gelasio";
+}
+
+h1, h2, h3, h4 {
+    font-family: "Inter";
+}
+
+/* ------------------------ Style ----------------------------- */
+/* colors */
+h1, h2, h3, h4 { 
+    color: var(--main-color)
+}
+
+h1.title, h1.subtitle, h2.author, h2.date {
+    color: #ffffff;
+}
+
+/* headers */
+h1.title {
+  font-size: 50pt;
+  margin-right: 15%;
+  font-weight: 900;
+}
+
+h1.subtitle {
+  margin-right: 15%;
+}
+
+h2.author {
+  margin-top: 70%;
+}
+
+h2.date {
+
+}
+
+/* normal headers */
+h1 {
+  font-size: 40pt;
+}
+
+h2 {
+  font-size: 24pt;
+}
+
+/* text */
+p, ul {
+  margin-right: 15%;
+}
+
+/* --------------------- CSS Fragmentation --------------------------- */
+/* page breaks; aka CSS fragmentation */
+.level1 {
+    page: chapter;
+  }
+  
+  .section > h1, .section > h2, .section > h3, .section > h4, .section > h5, .section > h6 {
+    break-after: avoid;
+  }
+  .footenotes {
+    break-before: always;
+    break-after: always;
+  }
+  .figure {
+    break-inside: avoid;
+  }
+  
+  /* do not break captions */
+  caption {
+    break-inside: avoid;
+    break-after: avoid;
+  }
+  
+  /* misc elements */
+  .subtitle span {
+    font-size: .9em;
+  }
+  img {
+    max-width: 100%;
+  }
+  
