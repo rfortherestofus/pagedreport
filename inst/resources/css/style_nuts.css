@@ -64,6 +64,21 @@ h1.title {
   string-set: h1-text content(text);
 }
 
+/* blank page */
+@page:blank{
+  @top-left{
+    display:none;
+  }
+
+  @top-center{
+    display: none;
+  }
+
+  @top-right{
+    display:none;
+  }
+}
+
 /* normal page */
 @page {
 
@@ -167,6 +182,66 @@ h1.title {
   }
 
 
+/* ----------------------- Table of contents ----------------------- */
+.toc a {
+  line-height: 30px;
+  text-decoration: none;
+  font-size: 14pt;
+  padding-right: .33em;
+}
+
+.toc ul {
+    list-style: none;
+    padding-left: 0;
+    overflow-x: hidden;
+    margin-right: 0%;
+}
+
+.toc li li{
+  padding-left: 1em;
+}
+
+.toc ul, .toc a, .toc a::after {
+  background-color: #ffffff;
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+.toc ul > li > ul > li > a {
+  color: #000000;
+}
+
+/* page number */
+.toc a::after {
+  content: target-counter(attr(href), page);
+  float: right;
+  background: white;
+}
+
+.toc a.front-matter-ref::after {
+  content: target-counter(attr(href), page, lower-roman);
+}
+
+.toc .leaders::before {
+  float: left;
+  width: 0;
+  white-space: nowrap;
+  content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+}
+
+/* numbering */
+
+@page:nth(2){
+  @top-left{
+    display:none;
+  }
+
+  @top-center{
+    display: none;
+  }
+}
+
+
 /* ------------------------ Fonts ---------------------------- */
 @import 'https://fonts.googleapis.com/css?family=Gelasio';
 @import 'https://fonts.googleapis.com/css?family=Inter';
@@ -243,28 +318,28 @@ p, ul {
     page: chapter;
   }
   
-  .section > h1, .section > h2, .section > h3, .section > h4, .section > h5, .section > h6 {
-    break-after: avoid;
-  }
-  .footenotes {
-    break-before: always;
-    break-after: always;
-  }
-  .figure {
-    break-inside: avoid;
-  }
-  
-  /* do not break captions */
-  caption {
-    break-inside: avoid;
-    break-after: avoid;
-  }
-  
-  /* misc elements */
-  .subtitle span {
-    font-size: .9em;
-  }
-  img {
-    max-width: 100%;
-  }
+.section > h1, .section > h2, .section > h3, .section > h4, .section > h5, .section > h6 {
+  break-after: avoid;
+}
+.footenotes {
+  break-before: always;
+  break-after: always;
+}
+.figure {
+  break-inside: avoid;
+}
+
+/* do not break captions */
+caption {
+  break-inside: avoid;
+  break-after: avoid;
+}
+
+/* misc elements */
+.subtitle span {
+  font-size: .9em;
+}
+img {
+  max-width: 100%;
+}
   

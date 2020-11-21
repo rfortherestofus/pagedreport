@@ -9,9 +9,11 @@ output:
     front_cover: ["../../../../resources/logo/square-logo.svg", "../../../../resources/img/nuts-img.jpg"]
     back_cover: ["../../../../resources/logo/square-logo.svg", "../../../../resources/img/hazelnuts-img.jpg"]
     toc: TRUE
+    toc_depth: 2
 knit: pagedown::chrome_print
 main-color: "#6cabdd"
 secondary-color: "#aabbcc"
+toc-title: "Table of Contents"
 ---
 
 ```{r setup, include=FALSE}
