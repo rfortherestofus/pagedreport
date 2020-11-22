@@ -10,10 +10,13 @@ output:
     back_cover: ["../../../../resources/logo/square-logo.svg", "../../../../resources/img/hazelnuts-img.jpg"]
     toc: TRUE
     toc_depth: 2
+    template: "../../../../resources/html/template_nuts.html"
 knit: pagedown::chrome_print
-main-color: "#6cabdd"
-secondary-color: "#aabbcc"
 toc-title: "Table of Contents"
+main-color: "#ff2266"
+secondary-color: "#aabbcc"
+common-font: "Lato"
+top-font: "Roboto"
 ---
 
 ```{r setup, include=FALSE}
