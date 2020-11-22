@@ -160,11 +160,10 @@ h1.title {
 /* ------------------------ Back Cover ---------------------- */
 .pagedjs_page:last-of-type {
     margin: 0 0 0 0;
-    background-color: var(--main-color);
-    background-image: var(--back-cover);
-    background-repeat: no-repeat;
-    background-position: 15cm 23cm;
-    background-size: 4cm;
+    background-image: var(--back-cover), var(--back-cover-2);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 15cm 23cm, 0cm 0cm;
+    background-size: 3cm, cover;
   }
 
 /* avoiding counter to be printed */
