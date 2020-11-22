@@ -15,8 +15,8 @@ knit: pagedown::chrome_print
 toc-title: "Table of Contents"
 main-color: "#ff2266"
 secondary-color: "#aabbcc"
-common-font: "Lato"
-top-font: "Roboto"
+common-font: "Nerko One"
+top-font: "Texturina"
 ---
 
 ```{r setup, include=FALSE}
