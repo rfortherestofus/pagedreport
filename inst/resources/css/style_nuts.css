@@ -123,10 +123,10 @@ h1.title {
 @page:first{
     margin: 0 0 0 0;
     background-color: #ffffff;
-    background-image: var(--front-cover), var(--front-cover-2);
-    background-repeat: no-repeat, no-repeat;
-    background-position: 4cm 24cm, 0cm 0cm;
-    background-size: 3cm, cover;  
+    background-image: url(../utils/line.svg), url(../utils/line.svg), var(--front-cover), var(--front-cover-2);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: 5% 40%, 95% 40%, 4cm 24cm, 0cm 0cm ;
+    background-size:  5cm, 5cm, 3cm, cover;  
 
     @top-left-corner {
       display: none;
@@ -246,7 +246,7 @@ h1.title {
 @import 'https://fonts.googleapis.com/css?family=Gelasio';
 @import 'https://fonts.googleapis.com/css?family=Inter';
 
-p, ul, a, h2.author, h2.date {
+p, ul, a {
     font-family: "Gelasio";
 }
 
@@ -279,7 +279,7 @@ h1.subtitle {
   color: #000000;
   font-size: 14pt;
   font-weight: 900;
-  background: linear-gradient(45deg, transparent, #ffffff, #ffffff);
+  background: #ffffff;
   margin-top: -70%;
   margin-left: 40%;
   margin-right: -20%;
@@ -288,14 +288,15 @@ h1.subtitle {
   padding-top: 0.5cm;
   padding-bottom: 0.5cm;
 }
-}
 
 h2.author {
-  margin-top: 70%;
+  margin-top: 110%;
+  margin-left: 60%;
 }
 
 h2.date {
-
+  margin-left: 60%;
+  margin-bottom: 0%;
 }
 
 /* normal headers */
