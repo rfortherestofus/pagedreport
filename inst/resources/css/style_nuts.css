@@ -12,7 +12,7 @@
     --running-title-width: 2.5in;
     --screen-pages-spacing: 5mm;
     --main-color: #724c25;
-    --secondart-color: #346aa0;
+    --secondary-color: #346aa0;
   }
   
 /* ---------------------- For debugging -------------------- */
@@ -100,6 +100,7 @@ h1.title {
       font-size: 14pt;
       font-weight: bold;
       margin-left: 0cm;
+      color: var(--main-color);
     }
 }
 
@@ -116,6 +117,7 @@ h1.title {
       content: counter(page);
       font-size: 14pt;
       font-weight: bold;
+      color: var(--main-color);
     }
 }
 
@@ -240,6 +242,18 @@ h1.title {
   }
 }
 
+/* title */
+.toc-title {
+  padding-top: 0cm;
+  padding-bottom: 0cm;
+  background-color: transparent;
+  background-image: none;
+  text-align: left;
+  margin-right: 0%;
+  margin-left: 0%;
+  color: var(--main-color);
+  margin-top: 0%;
+}
 
 /* ------------------------ Fonts ---------------------------- */
 @import 'https://fonts.googleapis.com/css?family=Gelasio';
@@ -255,8 +269,8 @@ h1, h2, h3, h4 {
 
 /* ------------------------ Style ----------------------------- */
 /* colors */
-h1, h2, h3, h4 { 
-    color: var(--main-color)
+h2, h3, h4 { 
+    color: var(--secondary-color)
 }
 
 h1.title, h2.author, h2.date {
@@ -271,6 +285,9 @@ h1.title {
   margin-top: 50%;
   text-align: center;
   font-weight: 900;
+  padding-bottom: 0;
+  padding-top: 0;
+  background: transparent;
 }
 
 h1.subtitle {
@@ -301,6 +318,18 @@ h2.date {
 /* normal headers */
 h1 {
   font-size: 40pt;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 2cm;
+  padding-bottom: 2cm;
+  background-color: var(--secondary-color);
+  background-image: url(../utils/line.svg), url(../utils/line.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: 5% 40%, 95% 40%;
+  background-size:  5cm, 5cm;  
+  margin-right: -17%;
+  margin-left: -17%;
+  margin-top: -10%;
 }
 
 h2 {
