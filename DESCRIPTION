@@ -1,4 +1,4 @@
-Package: pagedowntemplate
+Package: pagedreport
 Title: Simplify the use of pagedown through templates
 Version: 0.0.0.9000
 Authors@R: 
