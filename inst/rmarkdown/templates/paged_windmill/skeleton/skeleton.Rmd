@@ -4,7 +4,7 @@ subtitle: "Subtitle of the report"
 author: "Author Name"
 date: "Date"
 output: 
-  pagedowntemplate::paged_windmill:
+  pagedreport::paged_windmill:
     img: "https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2020/08/math.jpg"
     logo: "https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2020/08/rru-logo-blue.svg"
     img_to_dark: TRUE

@@ -3,14 +3,13 @@ title: "Title of the report"
 subtitle: "Subtitle of the report"
 author: "Author Name"
 date: "Date"
-output: 
-  pagedown::html_paged:
-    css: "../../../../resources/css/style_hazelnuts.css"
-    front_cover: ["../../../../resources/logo/square-logo.svg", "../../../../resources/img/nuts-img.jpg"]
-    back_cover: ["../../../../resources/logo/square-logo.svg", "../../../../resources/img/hazelnuts-img.jpg"]
-    toc: TRUE
-    toc_depth: 2
-    template: "../../../../resources/html/template_hazelnuts.html"
+output:
+  pagedreport::paged_hazelnuts:
+    front_img: "https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2020/08/math.jpg"
+    back_img: "https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2020/08/math.jpg"
+    logo: "https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2020/08/rru-logo-blue.svg"
+    img_to_dark: TRUE
+    logo_to_white: TRUE
 knit: pagedown::chrome_print
 toc-title: "Table of Contents"
 main-color: "#ff2266"
