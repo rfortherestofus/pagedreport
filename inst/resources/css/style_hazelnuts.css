@@ -1,0 +1,387 @@
+/* --------------------------------- */
+/* CSS template for paged nuts */
+/* --------------------------------- */
+
+/* -------------------- CSS variables ---------------------- */
+:root {
+    --background: whitesmoke;
+    --pagedjs-width: 210mm;
+    --pagedjs-height: 297mm;
+    --color-paper: white;
+    --color-mbox: rgba(0, 0, 0, 0.2);
+    --running-title-width: 2.5in;
+    --screen-pages-spacing: 5mm;
+    --main-color: #724c25;
+    --secondary-color: #346aa0;
+    --common-font: "Gelasio";
+    --top-font: "Inter var";
+  }
+  
+/* ---------------------- For debugging -------------------- */
+/* two pages in a row if possible on screen */
+@media screen {
+  body {
+      background-color: var(--background);
+      margin: var(--screen-pages-spacing) auto 0 auto;
+  }
+  .pagedjs_pages {
+      display: flex;
+      max-width: calc(var(--pagedjs-width) * 2);
+      flex: 0;
+      flex-wrap: wrap;
+      margin: 0 auto;
+  }
+  .pagedjs_page {
+      background-color: var(--color-paper);
+      box-shadow: 0 0 0 1px var(--color-mbox);
+      flex-shrink: 0;
+      flex-grow: 0;
+      margin: auto auto var(--screen-pages-spacing) auto;
+  }
+}
+
+/* when a row can hold two pages, start first page on the right */
+@media screen and (min-width: 12.32in) {
+  .pagedjs_page {
+      margin: auto 0 var(--screen-pages-spacing) 0;
+  }
+  .pagedjs_first_page {
+      margin-left: var(--pagedjs-width);
+  }
+}
+
+/* ------------------------ Pages -------------------------- */
+/* page size */
+@page {
+    size: 210mm 297mm; /* var(--pagedjs-width) doesn't work in browser when printing */
+  }
+
+
+/* string variables */
+h1.title {
+  string-set: h1-title content(text);
+}
+
+.shorttitle1 {
+  string-set: h1-text content(text);
+}
+
+/* blank page */
+@page:blank{
+  @top-left{
+    display:none;
+  }
+
+  @top-center{
+    display: none;
+  }
+
+  @top-right{
+    display:none;
+  }
+}
+
+/* normal page */
+@page {
+
+}
+
+/* counter */
+@page:right {
+
+    @top-center {
+      content: string(h1-title) " | ";
+      font-family: var(--top-font);
+      text-align: right;
+      margin-right: -15cm;
+      color: var(--main-color);
+    }
+
+    /* numbering */
+    @top-right {
+      content: counter(page);
+      font-size: 14pt;
+      font-weight: bold;
+      margin-left: 0cm;
+      color: var(--main-color);
+    }
+}
+
+@page:left {
+
+    @top-center {
+      content: " | " string(h1-text);
+      font-family: var(--top-font);
+      margin-left: 1cm;
+      color: var(--main-color);
+    }
+
+    /* numbering */
+    @top-left {
+      content: counter(page);
+      font-size: 14pt;
+      font-weight: bold;
+      color: var(--main-color);
+    }
+}
+
+/* paragraph margins */
+.pagedjs_left_page p,  .pagedjs_left_page ul, .pagedjs_left_page h2, .pagedjs_left_page h3, .pagedjs_left_page h4 {
+  margin-right: 15%
+}
+
+.pagedjs_right_page p,  .pagedjs_right_page ul, .pagedjs_right_page h2, .pagedjs_right_page h3, .pagedjs_right_page h4 {
+  margin-left: 15%
+}
+
+/* ------------------------ Front Cover --------------------- */
+@page:first{
+    margin: 0 0 0 0;
+    background-color: #ffffff;
+    background-image: url(../utils/line.svg), url(../utils/line.svg), var(--front-cover), var(--front-cover-2);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: 5% 40%, 95% 40%, 4cm 24cm, 0cm 0cm ;
+    background-size:  5cm, 5cm, 3cm, cover;  
+
+    @top-left-corner {
+      display: none;
+    }
+  
+    @top-left {
+      display: none;
+    }
+    
+    @top-center {
+      display: none;
+    }
+  
+    @top-right {
+      display: none;
+    }
+  
+    @top-right-corner {
+      display: none;
+    }
+
+    @bottom-right {
+      display: none;
+    }
+
+    @bottom-left {
+      display: none;
+    }
+  }
+
+/* ------------------------ Back Cover ---------------------- */
+.pagedjs_page:last-of-type {
+    margin: 0 0 0 0;
+    background-image: var(--back-cover), var(--back-cover-2);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 15cm 23cm, 0cm 0cm;
+    background-size: 3cm, cover;
+  }
+
+/* avoiding counter to be printed */
+.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-top-right {
+    display: none;
+  }
+
+.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-top-center {
+    display: none;
+  }
+
+
+.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-top-left {
+    display: none;
+  }
+
+
+/* ----------------------- Table of contents ----------------------- */
+.toc a {
+  line-height: 30px;
+  text-decoration: none;
+  font-size: 14pt;
+  padding-right: .33em;
+}
+
+.toc ul {
+    list-style: none;
+    padding-left: 0;
+    overflow-x: hidden;
+    margin-right: 0%;
+}
+
+.toc li li{
+  padding-left: 1em;
+}
+
+.toc ul, .toc a, .toc a::after {
+  background-color: #ffffff;
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+.toc ul > li > ul > li > a {
+  color: #000000;
+}
+
+/* page number */
+.toc a::after {
+  content: target-counter(attr(href), page);
+  float: right;
+  background: white;
+}
+
+.toc a.front-matter-ref::after {
+  content: target-counter(attr(href), page, lower-roman);
+}
+
+.toc .leaders::before {
+  float: left;
+  width: 0;
+  white-space: nowrap;
+  content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+}
+
+/* numbering */
+
+@page:nth(2){
+  @top-left{
+    display:none;
+  }
+
+  @top-center{
+    display: none;
+  }
+}
+
+/* title */
+.toc-title {
+  padding-top: 0cm;
+  padding-bottom: 0cm;
+  background-color: transparent;
+  background-image: none;
+  text-align: left;
+  margin-right: 0%;
+  margin-left: 0%;
+  color: var(--main-color);
+  margin-top: 0%;
+}
+
+/* ------------------------ Fonts ---------------------------- */
+@import 'https://fonts.googleapis.com/css?family=Gelasio';
+
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+
+p, ul, a {
+    font-family: var(--common-font);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--top-font);
+}
+
+/* ------------------------ Style ----------------------------- */
+/* colors */
+h2, h3, h4 { 
+    color: var(--secondary-color)
+}
+
+h1.title, h2.author, h2.date {
+    color: #ffffff;
+}
+
+/* headers */
+h1.title {
+  font-size: 50pt;
+  margin-right: 15%;
+  margin-left: 15%;
+  margin-top: 50%;
+  text-align: center;
+  font-weight: 900;
+  padding-bottom: 0;
+  padding-top: 0;
+  background: transparent;
+}
+
+h1.subtitle {
+  text-transform: uppercase;
+  color: #000000;
+  font-size: 14pt;
+  font-weight: 900;
+  background: #ffffff;
+  margin-top: -70%;
+  margin-left: 40%;
+  margin-right: -20%;
+  padding-left: 2cm;
+  padding-right: 0.5cm;
+  padding-top: 0.5cm;
+  padding-bottom: 0.5cm;
+}
+
+h2.author {
+  margin-top: 110%;
+  margin-left: 60%;
+}
+
+h2.date {
+  margin-left: 60%;
+  margin-bottom: 0%;
+}
+
+/* normal headers */
+h1 {
+  font-size: 40pt;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 2cm;
+  padding-bottom: 2cm;
+  background-color: var(--secondary-color);
+  background-image: url(../utils/line.svg), url(../utils/line.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: 5% 40%, 95% 40%;
+  background-size:  5cm, 5cm;  
+  margin-right: -17%;
+  margin-left: -17%;
+  margin-top: -10%;
+}
+
+h2 {
+  font-size: 24pt;
+}
+
+/* --------------------- CSS Fragmentation --------------------------- */
+/* page breaks; aka CSS fragmentation */
+.level1 {
+    page: chapter;
+  }
+  
+.section > h1, .section > h2, .section > h3, .section > h4, .section > h5, .section > h6 {
+  break-after: avoid;
+}
+.footenotes {
+  break-before: always;
+  break-after: always;
+}
+.figure {
+  break-inside: avoid;
+}
+
+/* do not break captions */
+caption {
+  break-inside: avoid;
+  break-after: avoid;
+}
+
+/* misc elements */
+.subtitle span {
+  font-size: .9em;
+}
+img {
+  max-width: 100%;
+}
+  

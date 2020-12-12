@@ -15,19 +15,19 @@ paged_windmill <-
            logo_to_white = FALSE) {
     # arguments
     main_css <-
-      system.file("resources/css/style_windmill.css", package = "pagedreport")
+      pkg_resource("css/style_windmill.css")
     pandoc_html <-
-      system.file("resources/html/template_windmill.html", package = "pagedreport")
+      pkg_resource("html/template_windmill.html")
 
     # default img
     if (img == "0") {
       img <-
-        system.file("resources/img/windmill-img.jpg", package = "pagedreport")
+        pkg_resource("img/windmill-img.jpg")
     }
 
     if (logo == "0") {
       logo <-
-        system.file("resources/logo/square-logo.svg", package = "pagedreport")
+        pkg_resource("logo/square-logo.svg")
     }
 
     # darken img
