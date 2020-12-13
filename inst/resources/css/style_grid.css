@@ -1,0 +1,384 @@
+/* --------------------------------- */
+/* CSS template for paged grid */
+/* --------------------------------- */
+
+/* -------------------- CSS variables ---------------------- */
+:root {
+    --background: whitesmoke;
+    --pagedjs-width: 210mm;
+    --pagedjs-height: 297mm;
+    --color-paper: white;
+    --color-mbox: rgba(0, 0, 0, 0.2);
+    --running-title-width: 2.5in;
+    --screen-pages-spacing: 5mm;
+    --main-color: #0F579F;
+  }
+
+/* ---------------------- For debugging -------------------- */
+/* two pages in a row if possible on screen */
+@media screen {
+  body {
+      background-color: var(--background);
+      margin: var(--screen-pages-spacing) auto 0 auto;
+  }
+  .pagedjs_pages {
+      display: flex;
+      max-width: calc(var(--pagedjs-width) * 2);
+      flex: 0;
+      flex-wrap: wrap;
+      margin: 0 auto;
+  }
+  .pagedjs_page {
+      background-color: var(--color-paper);
+      box-shadow: 0 0 0 1px var(--color-mbox);
+      flex-shrink: 0;
+      flex-grow: 0;
+      margin: auto auto var(--screen-pages-spacing) auto;
+  }
+}
+
+/* when a row can hold two pages, start first page on the right */
+@media screen and (min-width: 12.32in) {
+  .pagedjs_page {
+      margin: auto 0 var(--screen-pages-spacing) 0;
+  }
+  .pagedjs_first_page {
+      margin-left: var(--pagedjs-width);
+  }
+}
+
+/* ------------------------ Pages -------------------------- */
+/* page size */
+@page {
+    size: 8.5in 11in; /* var(--pagedjs-width) doesn't work in browser when printing */
+  }
+
+
+/* string variables */
+h1.title {
+  string-set: h1-title content(text);
+}
+
+.shorttitle1 {
+  string-set: h1-text content(text);
+}
+
+/* normal page */
+@page {
+
+}
+
+/* counter */
+@page:left {
+
+    /* grid */
+    @left-top {
+      content: "";
+      background-color: var(--main-color);
+      background-image: url(../utils/grid_alpha.png);
+      background-size: cover;
+      margin-bottom: 650%;
+      margin-left: 30%;
+      margin-right: -50%;
+    }
+
+    @bottom-left {
+      content: counter(page);
+      color: var(--main-color);
+      border-bottom:2px solid var(--main-color);
+      border-left: 2px solid var(--main-color);
+      font-size: 14pt;
+      font-weight: bold;
+      margin-left: -24%;
+      margin-bottom: 22%;
+      padding-left: 10%;
+      margin-right: 70%;
+    }
+
+    @bottom-left-corner {
+      content: "";
+      border-top:  2px solid var(--main-color);
+      border-right:  2px solid var(--main-color);
+      margin-top: 50%;
+      margin-right: 50%;
+    }
+
+    @bottom-center {
+      content: "";
+    }
+
+    @bottom-right {
+      content: "";
+    }
+}
+
+.pagedjs_left_page p {
+  margin-left: 15%;
+}
+
+.pagedjs_left_page ul {
+  margin-left: 15%;
+}
+
+.pagedjs_left_page h1 {
+  margin-left: 15%;
+}
+
+.pagedjs_left_page h2 {
+  margin-left: 15%;
+}
+
+.pagedjs_left_page h3 {
+  margin-left: 15%;
+}
+
+.pagedjs_left_page h4 {
+  margin-left: 15%;
+}
+
+/* right page */
+@page:right {
+
+    /* grid */
+    @right-top {
+      content: "";
+      background-color: var(--main-color);
+      background-image: url(../utils/grid_alpha.png);
+      background-size: cover;
+      margin-bottom: 650%;
+      margin-right: 30%;
+      margin-left: -50%;
+    }
+
+    /* numbering */
+    @bottom-right {
+      content: counter(page);
+      color: var(--main-color);
+      border-bottom:2px solid var(--main-color);
+      border-right: 2px solid var(--main-color);
+      font-size: 14pt;
+      font-weight: bold;
+      margin-right: -24%;
+      margin-bottom: 22%;
+      padding-right: 10%;
+      margin-left: 70%;
+    }
+
+    @bottom-right-corner {
+      content: "";
+      border-top:  2px solid var(--main-color);
+      border-left:  2px solid var(--main-color);
+      margin-top: 50%;
+      margin-left: 50%;
+    }
+
+    @bottom-left {
+      content: "";
+    }
+
+    @bottom-center {
+      content: "";
+    }
+}
+
+.pagedjs_right_page p {
+  margin-right: 15%;
+}
+
+.pagedjs_right_page ul {
+  margin-right: 15%;
+}
+
+.pagedjs_right_page h1 {
+  margin-right: 15%;
+}
+
+.pagedjs_right_page h2 {
+  margin-right: 15%;
+}
+
+.pagedjs_right_page h3 {
+  margin-right: 15%;
+}
+
+.pagedjs_right_page h4 {
+  margin-right: 15%;
+}
+
+/* ------------------------ Front Cover --------------------- */
+@page:first{
+    margin: 0 0 0 0;
+    background-color: var(--main-color);
+    background-image: var(--front-cover), url(../utils/grid_alpha.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 15cm 23cm, 8cm 12cm;
+    background-size: 4cm, 4cm;
+
+    @top-left-corner {
+      display: none;
+    }
+
+    @top-left {
+      display: none;
+    }
+
+    @top-center {
+      display: none;
+    }
+
+    @top-right {
+      display: none;
+    }
+
+    @top-right-corner {
+      display: none;
+    }
+
+    @bottom-right {
+      display: none;
+    }
+
+    @bottom-left {
+      display: none;
+    }
+  }
+
+
+/* ------------------------ Back Cover ---------------------- */
+.pagedjs_page:last-of-type {
+    margin: 0 0 0 0;
+    background-color: var(--main-color);
+    background-image: url(../utils/grid_white.png);
+    background-repeat: no-repeat;
+    background-position: 80% 10%;
+    background-size: 20%;
+  }
+
+/* bottom */
+.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-bottom-right {
+    content: "";
+    margin-top: -70%;
+    margin-right: -50%;
+    margin-left: 60%;
+    margin-bottom: -40%;
+    color: #ffffff;
+    background-color: #ffffff;
+    border: none;
+  }
+
+.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-bottom-center {
+  content: "";
+  margin-top: -70%;
+  margin-right: -80%;
+  margin-left: -50%;
+  margin-bottom: -40%;
+  color: #ffffff;
+  background-color: #ffffff;
+  background-image: var(--back-cover) ;
+  background-repeat: no-repeat;
+  background-position: 80% 20%;
+  background-size: 2cm;
+  border: none;
+}
+
+.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-bottom-left {
+  content: "";
+  margin-top: -70%;
+  margin-left: -50%;
+  margin-right: 0%;
+  margin-bottom: -40%;
+  color: #ffffff;
+  background-color: #ffffff;
+  border: none;
+}
+
+/* remove grid */
+.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-left-top {
+  display: none;
+}
+
+.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-right-top {
+  display: none;
+}
+
+/* ------------------------ Fonts ---------------------------- *
+@import 'https://fonts.googleapis.com/css?family=Gelasio';
+
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+
+p, ul, a, h1.subtitle, h2.author, h2.date {
+    font-family: "Gelasio";
+}
+
+h1, h2, h3, h4 {
+    font-family: "Inter var";
+}
+
+/* ------------------------ Style ----------------------------- */
+/* colors */
+h1.title, h1.subtitle, h2.author, h2.date {
+    color: #ffffff;
+}
+
+/* headers */
+h1.title {
+  font-size: 50pt;
+  font-weight: 700;
+}
+
+h1.subtitle {
+  font-size: 25pt;
+}
+
+h2.author {
+  margin-top: 70%;
+  font-size: 25pt;
+}
+
+h2.date {
+  font-size: 25pt;
+}
+
+/* normal headers */
+h1 {
+  font-size: 40pt;
+}
+
+h2 {
+  font-size: 24pt;
+}
+
+/* --------------------- CSS Fragmentation --------------------------- */
+/* page breaks; aka CSS fragmentation */
+.level1 {
+    page: chapter;
+  }
+
+  .section > h1, .section > h2, .section > h3, .section > h4, .section > h5, .section > h6 {
+    break-after: avoid;
+  }
+  .footenotes {
+    break-before: always;
+    break-after: always;
+  }
+  .figure {
+    break-inside: avoid;
+  }
+
+  /* do not break captions */
+  caption {
+    break-inside: avoid;
+    break-after: avoid;
+  }
+
+  /* misc elements */
+  .subtitle span {
+    font-size: .9em;
+  }
+  img {
+    max-width: 100%;
+  }
