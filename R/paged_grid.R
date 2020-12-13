@@ -11,7 +11,7 @@ paged_grid <- function(logo = "0"){
   main_css <-
     pkg_resource("css/style_grid.css")
   pandoc_html <-
-    pkg_resource("html/template_grid.html")
+    pkg_resource("html/template_windmill.html")
 
   # default
   if (logo == "0") {
