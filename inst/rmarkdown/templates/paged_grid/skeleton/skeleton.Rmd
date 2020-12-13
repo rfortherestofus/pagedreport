@@ -1,7 +1,8 @@
 ---
-title: "Template Title"
-author: "Your Name"
-date: "The Date"
+title: "Title of this incredible report"
+subtitle: "A really nice subtitle for this amazing report on two lines"
+author: "Santa Claus"
+date: "The Date - december"
 output: 
   pagedown::html_paged:
     css: "../../../../resources/css/style_grid.css"

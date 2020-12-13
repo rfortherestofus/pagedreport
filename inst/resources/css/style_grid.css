@@ -207,31 +207,30 @@ h1.title {
 
 /* ------------------------ Front Cover --------------------- */
 @page:first{
-    margin: 0 0 0 0;
-    background-color: var(--main-color);
-    background-image: var(--front-cover), url(../utils/grid_alpha.png);
-    background-repeat: no-repeat, no-repeat;
-    background-position: 15cm 23cm, 8cm 12cm;
-    background-size: 4cm, 4cm;
+    background-image: var(--front-cover);
+    background-repeat: no-repeat;
+    background-position: 25% 15%;
+    background-size: 2cm;
 
     @top-left-corner {
-      display: none;
+      content: "";
+      background-color: var(--main-color);
     }
 
-    @top-left {
-      display: none;
+    @left-top {
+      content: "";
+      background-image: none;
+      background-color: var(--main-color);
     }
 
-    @top-center {
-      display: none;
+    @left-middle {
+      content: "";
+      background-color: var(--main-color);
     }
 
-    @top-right {
-      display: none;
-    }
-
-    @top-right-corner {
-      display: none;
+    @left-bottom {
+      content: "";
+      background-color: var(--main-color);
     }
 
     @bottom-right {
@@ -241,8 +240,11 @@ h1.title {
     @bottom-left {
       display: none;
     }
+    
+    @bottom-right-corner{
+      display: none;
+    }
   }
-
 
 /* ------------------------ Back Cover ---------------------- */
 .pagedjs_page:last-of-type {
@@ -319,28 +321,36 @@ h1, h2, h3, h4 {
 }
 
 /* ------------------------ Style ----------------------------- */
-/* colors */
-h1.title, h1.subtitle, h2.author, h2.date {
-    color: #ffffff;
-}
-
 /* headers */
 h1.title {
-  font-size: 50pt;
+  font-size: 30pt;
   font-weight: 700;
+  padding-left: 15%;
+  margin-top: 52%;
 }
 
 h1.subtitle {
-  font-size: 25pt;
+  font-size: 20pt;
+  padding-left: 15%;
+  font-weight: normal;
 }
 
 h2.author {
-  margin-top: 70%;
-  font-size: 25pt;
+  margin-top: 38%;
+  font-size: 16pt;
+  background: lightgray;
+  padding-top: 10%;
+  padding-left: 15%;
+  padding-bottom: 10%;
+  margin-right: -50%;
+  font-weight: normal;
 }
 
 h2.date {
-  font-size: 25pt;
+  font-size: 16pt;
+  padding-left: 15%;
+  font-weight: normal;
+  margin-top: -110%;
 }
 
 /* normal headers */
