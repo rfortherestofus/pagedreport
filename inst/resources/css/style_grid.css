@@ -12,6 +12,8 @@
     --running-title-width: 2.5in;
     --screen-pages-spacing: 5mm;
     --main-color: #0F579F;
+    --common-font: "Gelasio";
+    --top-font: "Inter var";
   }
 
 /* ---------------------- For debugging -------------------- */
@@ -303,7 +305,7 @@ h1.title {
   display: none;
 }
 
-/* ------------------------ Fonts ---------------------------- *
+/* ------------------------ Fonts ---------------------------- */
 @import 'https://fonts.googleapis.com/css?family=Gelasio';
 
 @import url('https://rsms.me/inter/inter.css');
@@ -312,12 +314,12 @@ html { font-family: 'Inter', sans-serif; }
   html { font-family: 'Inter var', sans-serif; }
 }
 
-p, ul, a, h1.subtitle, h2.author, h2.date {
-    font-family: "Gelasio";
+p, ul, a {
+    font-family: var(--common-font);
 }
 
 h1, h2, h3, h4 {
-    font-family: "Inter var";
+    font-family: var(--top-font);
 }
 
 /* ------------------------ Style ----------------------------- */

@@ -17,7 +17,7 @@ paged_windmill <-
     main_css <-
       pkg_resource("css/style_windmill.css")
     pandoc_html <-
-      pkg_resource("html/template_windmill.html")
+      pkg_resource("html/template_paged.html")
 
     # default img
     if (img == "0") {

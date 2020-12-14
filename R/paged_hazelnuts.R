@@ -18,7 +18,7 @@ paged_hazelnuts <- function(logo = "0",
   main_css <-
     pkg_resource("css/style_hazelnuts.css")
   pandoc_html <-
-    pkg_resource("html/template_hazelnuts.html")
+    pkg_resource("html/template_paged.html")
 
   # default img
   if (front_img == "0") {

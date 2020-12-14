@@ -1,21 +1,22 @@
 ---
-title: "Title of the report"
-subtitle: "Subtitle of the report"
-author: "Author Name"
-date: "Date"
+title: "Annual North"
+subtitle: "Christmas activity report"
+author: "Sante Claus"
+date: "December 2020"
 output:
   pagedreport::paged_hazelnuts:
-    front_img: "https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2020/08/math.jpg"
-    back_img: "https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2020/08/math.jpg"
-    logo: "https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2020/08/rru-logo-blue.svg"
+    front_img: "https://images.pexels.com/photos/717988/pexels-photo-717988.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+    back_img: "https://images.pexels.com/photos/3303615/pexels-photo-3303615.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    logo: "https://www.flaticon.com/svg/static/icons/svg/268/268225.svg"
     img_to_dark: TRUE
     logo_to_white: TRUE
 knit: pagedown::chrome_print
 toc-title: "Table of Contents"
-main-color: "#ff2266"
-secondary-color: "#aabbcc"
-common-font: "IBM Plex Serif"
-top-font: "IBM Plex Sans"
+main-color: "#E40A2D"
+secondary-color: "#00873E"
+google-font: true
+common-font: "Raleway"
+top-font: "Mountains of Christmas"
 ---
 
 ```{r setup, include=FALSE}
