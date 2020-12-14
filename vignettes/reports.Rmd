@@ -1,0 +1,71 @@
+---
+title: "Using the templates"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{reports}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Principle
+
+The package `pagedreport` offer custom templates to make the use of `pagedown` easier. All of the customization goes through the YAML header of the template.
+
+## How it works
+
+As an example, here is the YAML header for a special Christmas template made with `pagedreport::paged_hazelnuts`.
+
+IMAGE
+
+```{yaml, eval = FALSE}
+---
+title: "Annual North"
+subtitle: "Christmas activity report"
+author: "Santa Claus"
+date: "December 2020"
+output:
+  pagedreport::paged_hazelnuts:
+    front_img: "https://images.pexels.com/photos/717988/pexels-photo-717988.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+    back_img: "https://images.pexels.com/photos/3303615/pexels-photo-3303615.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    logo: "https://www.flaticon.com/svg/static/icons/svg/268/268225.svg"
+    img_to_dark: TRUE
+    logo_to_white: TRUE
+knit: pagedown::chrome_print
+toc-title: "Table of Contents"
+main-color: "#E40A2D"
+secondary-color: "#00873E"
+google-font: true
+common-font: "Raleway"
+top-font: "Mountains of Christmas"
+---
+```
+
+As you can see, four blocks can be distinguised :
+
++ the first one is pretty classical with `title`, `subtitle`, `author` and `date` ;
++ the second one is about the template to use and his arguments. All the arguments related to images and logo are in this block ;
++ the third one is `knit: pagedown::chrome_print` to get the PDF output ;
++ the last one is about customization of the template through some arguments like `main-color` or `top-font`. This part is handled through a custom Pandoc template and some JavaScript functions to update the CSS.
+
+## Custom elements
+
+### `paged_windmill`
+
+
+### `paged_grid`
+
+
+### `paged_hazelnuts`
+
+
+## More
+
+You can see more results in the gallery issue on Github.
+

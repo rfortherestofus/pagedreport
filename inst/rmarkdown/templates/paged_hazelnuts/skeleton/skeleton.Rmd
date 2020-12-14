@@ -1,7 +1,7 @@
 ---
 title: "Annual North"
 subtitle: "Christmas activity report"
-author: "Sante Claus"
+author: "Santa Claus"
 date: "December 2020"
 output:
   pagedreport::paged_hazelnuts:
