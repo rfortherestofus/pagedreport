@@ -13,8 +13,7 @@ Authors@R:
 Description: This package allow people to use pre-formatted
     template for pagedown.  It helps generating nice and well-design PDF
     using Rmarkdown without diving into CSS.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+License: MIT + file LICENSE
 Imports:
     magick,
     pagedown
