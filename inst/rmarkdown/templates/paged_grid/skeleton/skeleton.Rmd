@@ -5,7 +5,7 @@ author: "Santa Claus"
 date: "The Date - december"
 output: 
     pagedreport::paged_grid:
-      logo: "https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2020/08/rru-logo-blue.svg"
+      logo: "https://raw.githubusercontent.com/rfortherestofus/assets/master/images/rru-logo-maroon.svg"
 knit: pagedown::chrome_print
 main-color: "#741336"
 common-font: "Oswald"
