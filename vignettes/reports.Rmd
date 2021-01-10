@@ -22,7 +22,9 @@ The package `pagedreport` offer custom templates to make the use of `pagedown` e
 
 As an example, here is the YAML header for a special Christmas template made with `pagedreport::paged_hazelnuts`.
 
-IMAGE
+```{r, echo = FALSE}
+knitr::include_graphics("https://user-images.githubusercontent.com/28248895/102329258-7a023800-3f88-11eb-8f4c-2f6c0cb9b562.png")
+```
 
 ```{yaml, eval = FALSE}
 ---
@@ -50,22 +52,36 @@ top-font: "Mountains of Christmas"
 As you can see, four blocks can be distinguised :
 
 + the first one is pretty classical with `title`, `subtitle`, `author` and `date` ;
+
 + the second one is about the template to use and his arguments. All the arguments related to images and logo are in this block ;
+
 + the third one is `knit: pagedown::chrome_print` to get the PDF output ;
+
 + the last one is about customization of the template through some arguments like `main-color` or `top-font`. This part is handled through a custom Pandoc template and some JavaScript functions to update the CSS.
 
 ## Custom elements
 
+For all the templates, you can change the main color and the fonts using `main-color`, `common-font` or `top-font` in the header.
+
+For the fonts, if you have it installed, just delete the `google-font: true` line. Otherwise, leave it as it is to use Google Fonts by their names.
+
+Templates have also differents arguments.
+
 ### `paged_windmill`
 
+Here you can use a logo and a front image with the `logo` and `img` arguments of the `paged_windmill` function.
+
+If you want to darken the image, use `img_to_dark: TRUE` and `logo_to_white: TRUE` to transform your logo in a white version.
 
 ### `paged_grid`
 
+This template use no image, but only a logo. 
 
 ### `paged_hazelnuts`
 
+This one is the most complex, with a table of contents included. You also have a front image with `front_img` and a back image with `back_img` arguments.
 
 ## More
 
-You can see more results in the gallery issue on Github.
+You can see more results in the [gallery](https://github.com/rfortherestofus/pagedreport/issues/14) issue on Github.
 

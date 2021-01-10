@@ -1,6 +1,22 @@
-# pagedowntemplate
+# pagedreport
 
-Notes [here](https://docs.google.com/document/d/1oBuFnqwBykkhVGMpLsEBAEBbh-ZBtVEX5lE9kSk9X6w/edit?usp=sharing)
+This packages aims at easing the use of `pagedown` by proposing templates.
+
+You can install it with :
+
+```
+remotes::install_github("rfortherestofus/pagedreport")
+```
+
+Three templates are available for the moment (named after their default image) :
+
++ windmill template ;
++ grid template ;
++ hazelnuts template.
+
+## Documentation
+
+You can report to the following blog post to know more about the package. <-- PUT LINK
 
 ## Code of Conduct
 
