@@ -1,15 +1,13 @@
 ---
-title: "Title of this incredible report"
-subtitle: "A really nice subtitle for this amazing report on two lines"
-author: "Santa Claus"
-date: "The Date - december"
+title: "Title of the report"
+subtitle: "Subtitle of the report"
+author: "Author Name"
+date: "Date"
 output: 
     pagedreport::paged_grid:
-      logo: "https://raw.githubusercontent.com/rfortherestofus/assets/master/images/rru-logo-maroon.svg"
+      logo: "https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2020/08/rru-logo-blue.svg"
 knit: pagedown::chrome_print
-main-color: "#741336"
-common-font: "Oswald"
-top-font: "Langar"
+main-color: "#6cabdd"
 ---
 
 ```{r setup, include=FALSE}
