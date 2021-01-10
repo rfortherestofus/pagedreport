@@ -22,12 +22,12 @@ paged_hazelnuts <- function(logo = "0",
 
   # default img
   if (front_img == "0") {
-    img <-
+    front_img <-
       pkg_resource("img/nuts-img.jpg")
   }
 
   if (back_img == "0") {
-    img <-
+    back_img <-
       pkg_resource("img/hazelnuts-img.jpg")
   }
 
