@@ -14,11 +14,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-## Principle
+## Introduction
 
-The package `pagedreport` offer custom templates to make the use of `pagedown` easier. All of the customization goes through the YAML header of the template.
+The `pagedreport` package offers a set of custom RMarkdown templates to make attractive PDF reports. These templates can also be customized to match your organization's branding, including colors, fonts, and a logo. All customization takes place in the YAML header of the template, meaning you never have to mess with HTML or CSS. Everything you need to do in order to make beautiful reports happens right in R. 
 
-## How it works
+## How it Work
 
 As an example, here is the YAML header for a special Christmas template made with `pagedreport::paged_hazelnuts`.
 
@@ -43,43 +43,45 @@ knit: pagedown::chrome_print
 toc-title: "Table of Contents"
 main-color: "#E40A2D"
 secondary-color: "#00873E"
-google-font: true
+google-font: TRUE
 common-font: "Raleway"
 top-font: "Mountains of Christmas"
 ---
 ```
 
-As you can see, four blocks can be distinguised :
+The YAML has four main sections
 
-+ the first one is pretty classical with `title`, `subtitle`, `author` and `date` ;
++ The first section (`title`, `subtitle`, `author` and `date`) includes arguments that will be familiar to all RMarkdown users. 
 
-+ the second one is about the template to use and his arguments. All the arguments related to images and logo are in this block ;
++ The second sections selects the template to use and relevant arguments. All arguments related to images (e.g. images on the front and back cover) and logo are in this section 
 
-+ the third one is `knit: pagedown::chrome_print` to get the PDF output ;
++ The third section is `knit: pagedown::chrome_print`, which is [how we get our PDF output](https://pagedown.rbind.io/#print-to-pdf). 
 
-+ the last one is about customization of the template through some arguments like `main-color` or `top-font`. This part is handled through a custom Pandoc template and some JavaScript functions to update the CSS.
++ The last section provides several arguments to customize colors and fonts. 
 
-## Custom elements
+## Customization
 
-For all the templates, you can change the main color and the fonts using `main-color`, `common-font` or `top-font` in the header.
+For all the templates, you can change the colors and the fonts using `main-color`, `secondary-color`, which do what they say on the tin. 
 
-For the fonts, if you have it installed, just delete the `google-font: true` line. Otherwise, leave it as it is to use Google Fonts by their names.
+The `google-font` argument, if set to TRUE, enables you to use any font from [Google Fonts](https://fonts.google.com/) (if you set `google-font` to FALSE, you can also use fonts you have on your local computer). The `common-font` argument sets the font for elements such as paragraph text. The `top-font` argument sets the font for headers. 
 
-Templates have also differents arguments.
+The three templates have also have unique arguments, outlined below.
 
 ### `paged_windmill`
 
-Here you can use a logo and a front image with the `logo` and `img` arguments of the `paged_windmill` function.
+Here you can use a logo and a cover image with the `logo` and `img` arguments of the `paged_windmill` function.
 
-If you want to darken the image, use `img_to_dark: TRUE` and `logo_to_white: TRUE` to transform your logo in a white version.
+If you want to darken the image, use `img_to_dark: TRUE`. [This will help make the text on top of it easier to read](https://twitter.com/steveschoger/status/888021897782362114). 
+
+You can also  `logo_to_white: TRUE` to transform your logo into a white version. This is helpful if the cover image is dark and you want to make sure your logo is visible. 
 
 ### `paged_grid`
 
-This template use no image, but only a logo. 
+This template uses a logo using the `logo` argument, but does not have a cover image so `img` is unnecessary. 
 
 ### `paged_hazelnuts`
 
-This one is the most complex, with a table of contents included. You also have a front image with `front_img` and a back image with `back_img` arguments.
+This template is the most complex of three. In addition to setting the cover image with `front_img`, you can also set an image to go on the back cover the with `back_img` argument. This template also has a table of contents included, which can be disabled using the `toc` argument under output.  
 
 ## More
 
