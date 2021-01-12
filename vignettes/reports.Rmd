@@ -69,7 +69,7 @@ The three templates have also have unique arguments, outlined below.
 
 ### `paged_windmill`
 
-Here you can use a logo and a cover image with the `logo` and `img` arguments of the `paged_windmill` function.
+Here you can use a logo and a cover image with the `logo` and `front_img` arguments of the `paged_windmill` function.
 
 If you want to darken the image, use `img_to_dark: TRUE`. [This will help make the text on top of it easier to read](https://twitter.com/steveschoger/status/888021897782362114). 
 

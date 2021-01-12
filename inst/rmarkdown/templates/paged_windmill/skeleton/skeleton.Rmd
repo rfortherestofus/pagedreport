@@ -5,7 +5,7 @@ author: "Author Name"
 date: "Date"
 output: 
   pagedreport::paged_windmill:
-    img: "https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2020/08/math.jpg"
+    front_img: "https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2020/08/math.jpg"
     logo: "https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2020/08/rru-logo-blue.svg"
     img_to_dark: TRUE
     logo_to_white: TRUE

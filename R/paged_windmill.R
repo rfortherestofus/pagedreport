@@ -1,7 +1,7 @@
 #' Function for windmill template
 #'
 #' @param logo Logo
-#' @param img Image
+#' @param front_img Front image
 #' @param img_to_dark Darken image
 #' @param logo_to_white Tranform logo color to white - logo must be SVG
 #'
@@ -10,7 +10,7 @@
 #'
 paged_windmill <-
   function(logo = "0",
-           img = "0",
+           front_img = "0",
            img_to_dark = TRUE,
            logo_to_white = FALSE) {
     # arguments
@@ -20,8 +20,8 @@ paged_windmill <-
       pkg_resource("html/template_paged.html")
 
     # default img
-    if (img == "0") {
-      img <-
+    if (front_img == "0") {
+      front_img <-
         pkg_resource("img/windmill-img.jpg")
     }
 
@@ -33,14 +33,14 @@ paged_windmill <-
     # darken img
     if (img_to_dark == TRUE) {
       # opacity
-      img_init <-
-        magick::image_read(img)
-      img_ok <-
-        magick::image_colorize(img_init, opacity = 50, color = "black")
+      front_img_init <-
+        magick::image_read(front_img)
+      front_img_ok <-
+        magick::image_colorize(front_img_init, opacity = 50, color = "black")
 
       # path to image
-      img <- paste0(tempfile("img"), ".jpg")
-      magick::image_write(img_ok, img, format = "jpg")
+      front_img <- paste0(tempfile("img"), ".jpg")
+      magick::image_write(front_img_ok, front_img, format = "jpg")
     }
 
     # logo to white - logo should be svg
@@ -58,7 +58,7 @@ paged_windmill <-
     pagedown::html_paged(
       css = main_css,
       template = pandoc_html,
-      front_cover = c(logo, img),
+      front_cover = c(logo, front_img),
       back_cover = logo
     )
   }
