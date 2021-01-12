@@ -13,8 +13,8 @@
     --screen-pages-spacing: 5mm;
     --main-color: #724c25;
     --secondary-color: #346aa0;
-    --common-font: "Gelasio";
-    --top-font: "Inter";
+    --main-font: "Gelasio";
+    --header-font: "Inter";
   }
   
 /* ---------------------- For debugging -------------------- */
@@ -91,7 +91,7 @@ h1.title {
 
     @top-center {
       content: string(h1-title) " | ";
-      font-family: var(--top-font);
+      font-family: var(--header-font);
       text-align: right;
       margin-right: -15cm;
       color: var(--main-color);
@@ -111,7 +111,7 @@ h1.title {
 
     @top-center {
       content: " | " string(h1-text);
-      font-family: var(--top-font);
+      font-family: var(--header-font);
       margin-left: 1cm;
       color: var(--main-color);
     }
@@ -273,11 +273,11 @@ h1.title {
 @import 'https://fonts.googleapis.com/css?family=Inter';
 
 p, ul, a {
-    font-family: var(--common-font);
+    font-family: var(--main-font);
 }
 
 h1, h2, h3, h4 {
-    font-family: var(--top-font);
+    font-family: var(--header-font);
 }
 
 /* ------------------------ Style ----------------------------- */

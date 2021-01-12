@@ -12,8 +12,8 @@
     --running-title-width: 2.5in;
     --screen-pages-spacing: 5mm;
     --main-color: #0F579F;
-    --common-font: "Gelasio";
-    --top-font: "Inter";
+    --main-font: "Gelasio";
+    --header-font: "Inter";
   }
 
 /* ---------------------- For debugging -------------------- */
@@ -310,11 +310,11 @@ h1.title {
 @import 'https://fonts.googleapis.com/css?family=Inter';
 
 p, ul, a {
-    font-family: var(--common-font);
+    font-family: var(--main-font);
 }
 
 h1, h2, h3, h4 {
-    font-family: var(--top-font);
+    font-family: var(--header-font);
 }
 
 /* ------------------------ Style ----------------------------- */

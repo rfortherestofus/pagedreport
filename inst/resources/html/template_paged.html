@@ -204,13 +204,13 @@ $endif$
 
 $if(google-font)$
 <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-$if(common-font)$
-<div class="common-font" style="display: none;">$common-font$</div>
+$if(main-font)$
+<div class="main-font" style="display: none;">$main-font$</div>
 <script>
 (function() {
-    let commonFont = document.querySelector('.common-font');
-    let commonFontCont = commonFont.textContent;
-    document.documentElement.style.setProperty('--common-font', commonFontCont);
+    let mainFont = document.querySelector('.main-font');
+    let mainFontCont = mainFont.textContent;
+    document.documentElement.style.setProperty('--main-font', mainFontCont);
 
     WebFont.load({
     google: {
@@ -221,13 +221,13 @@ $if(common-font)$
 </script>
 $endif$
 
-$if(top-font)$
-<div class="top-font" style="display: none;">$top-font$</div>
+$if(header-font)$
+<div class="header-font" style="display: none;">$header-font$</div>
 <script>
 (function() {
-    let topFont = document.querySelector('.top-font');
-    let topFontCont = topFont.textContent;
-    document.documentElement.style.setProperty('--top-font', topFontCont);
+    let headerFont = document.querySelector('.header-font');
+    let headerFontCont = headerFont.textContent;
+    document.documentElement.style.setProperty('--header-font', headerFontCont);
 
     WebFont.load({
     google: {
@@ -240,24 +240,24 @@ $endif$
 
 $else$
 
-$if(common-font)$
-<div class="common-font" style="display: none;">$common-font$</div>
+$if(main-font)$
+<div class="main-font" style="display: none;">$main-font$</div>
 <script>
 (function() {
-    let commonFont = document.querySelector('.common-font');
-    let commonFontCont = commonFont.textContent;
-    document.documentElement.style.setProperty('--common-font', commonFontCont);
+    let mainFont = document.querySelector('.main-font');
+    let mainFontCont = mainFont.textContent;
+    document.documentElement.style.setProperty('--main-font', mainFontCont);
 })();
 </script>
 $endif$
 
-$if(top-font)$
-<div class="top-font" style="display: none;">$top-font$</div>
+$if(header-font)$
+<div class="header-font" style="display: none;">$header-font$</div>
 <script>
 (function() {
-    let topFont = document.querySelector('.top-font');
-    let topFontCont = topFont.textContent;
-    document.documentElement.style.setProperty('--top-font', topFontCont);
+    let headerFont = document.querySelector('.header-font');
+    let headerFontCont = headerFont.textContent;
+    document.documentElement.style.setProperty('--header-font', headerFontCont);
 })();
 </script>
 $endif$

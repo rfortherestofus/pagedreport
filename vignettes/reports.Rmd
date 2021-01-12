@@ -44,8 +44,8 @@ toc-title: "Table of Contents"
 main-color: "#E40A2D"
 secondary-color: "#00873E"
 google-font: TRUE
-common-font: "Raleway"
-top-font: "Mountains of Christmas"
+main-font: "Raleway"
+header-font: "Mountains of Christmas"
 ---
 ```
 
@@ -63,7 +63,7 @@ The YAML has four main sections
 
 For all the templates, you can change the colors and the fonts using `main-color`, `secondary-color`, which do what they say on the tin. 
 
-The `google-font` argument, if set to TRUE, enables you to use any font from [Google Fonts](https://fonts.google.com/) (if you set `google-font` to FALSE, you can also use fonts you have on your local computer). The `common-font` argument sets the font for elements such as paragraph text. The `top-font` argument sets the font for headers. 
+The `google-font` argument, if set to TRUE, enables you to use any font from [Google Fonts](https://fonts.google.com/) (if you set `google-font` to FALSE, you can also use fonts you have on your local computer). The `main-font` argument sets the font for elements such as paragraph text. The `header-font` argument sets the font for headers. 
 
 The three templates have also have unique arguments, outlined below.
 
