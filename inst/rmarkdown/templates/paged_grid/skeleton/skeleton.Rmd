@@ -8,6 +8,8 @@ output:
       logo: "https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2020/08/rru-logo-blue.svg"
 knit: pagedown::chrome_print
 main-color: "#6cabdd"
+google-font: true
+main-font: "Mountains of Christmas"
 ---
 
 ```{r setup, include=FALSE}
