@@ -16,7 +16,9 @@ Three templates are available for the moment (named after their default image) :
 
 ## Documentation
 
-You can report to the following blog post to know more about the package. <-- PUT LINK
+An intro explaining the what and why of the package is [available on the R for the Rest of Us website](https://rfortherestofus.com/2021/01/announcing-pagedreport/). 
+
+The full docs are available [here](https://pagedreport.rfortherestofus.com).
 
 ## Code of Conduct
 

@@ -1,5 +1,5 @@
 ---
-title: "Using the templates"
+title: "Using the Templates"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{reports}
@@ -69,6 +69,8 @@ The three templates have also have unique arguments, outlined below.
 
 ### `paged_windmill`
 
+![](https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2021/01/windmill.gif)
+
 Here you can use a logo and a cover image with the `logo` and `front_img` arguments of the `paged_windmill` function.
 
 If you want to darken the image, use `img_to_dark: TRUE`. [This will help make the text on top of it easier to read](https://twitter.com/steveschoger/status/888021897782362114).
@@ -77,9 +79,13 @@ You can also add `logo_to_white: TRUE` to transform your logo into a white versi
 
 ### `paged_grid`
 
+![](https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2021/01/grid.gif)
+
 This template uses a logo using the `logo` argument, but does not have a cover image so `img` is unnecessary. 
 
 ### `paged_hazelnuts`
+
+![](https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2021/01/hazelnuts.gif)
 
 This template is the most complex of three. In addition to setting the cover image with `front_img`, you can also set an image to go on the back cover the with `back_img` argument. This template also has a table of contents included, which can be disabled using the `toc` argument under output.  
 
