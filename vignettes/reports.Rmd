@@ -71,9 +71,9 @@ The three templates have also have unique arguments, outlined below.
 
 Here you can use a logo and a cover image with the `logo` and `front_img` arguments of the `paged_windmill` function.
 
-If you want to darken the image, use `img_to_dark: TRUE`. [This will help make the text on top of it easier to read](https://twitter.com/steveschoger/status/888021897782362114). Please note this only works if your logo is in SVG format. 
+If you want to darken the image, use `img_to_dark: TRUE`. [This will help make the text on top of it easier to read](https://twitter.com/steveschoger/status/888021897782362114).
 
-You can also add `logo_to_white: TRUE` to transform your logo into a white version. This is helpful if the cover image is dark and you want to make sure your logo is visible. 
+You can also add `logo_to_white: TRUE` to transform your logo into a white version. This is helpful if the cover image is dark and you want to make sure your logo is visible. Please note this only works if your logo is in SVG format. 
 
 ### `paged_grid`
 
