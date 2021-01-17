@@ -1,6 +1,6 @@
 # pagedreport
 
-This packages aims at easing the use of `pagedown` by proposing templates.
+pagedreport is an R package to help you make beautiful PDF-based reports from RMarkdown. 
 
 You can install it with :
 
@@ -8,11 +8,19 @@ You can install it with :
 remotes::install_github("rfortherestofus/pagedreport")
 ```
 
-Three templates are available for the moment (named after their default image) :
+Three templates are available for the moment (each is named after its default image) :
 
-+ windmill template ;
-+ grid template ;
-+ hazelnuts template.
+**windmill**
+
+![](https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2021/01/windmill.gif)
+
+**grid**
+
+![](https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2021/01/grid.gif)
+
+**hazelnuts**
+
+![](https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2021/01/hazelnuts.gif)
 
 ## Documentation
 
