@@ -16,8 +16,6 @@ knitr::opts_chunk$set(
 
 ## Introduction
 
-Test
-
 The `pagedreport` package offers a set of custom RMarkdown templates to make attractive PDF reports. These templates can also be customized to match your organization's branding, including colors, fonts, and a logo. All customization takes place in the YAML header of the template, meaning you never have to mess with HTML or CSS. Everything you need to do in order to make beautiful reports happens right in R. 
 
 ## How it Works
