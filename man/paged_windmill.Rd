@@ -6,7 +6,7 @@
 \usage{
 paged_windmill(
   logo = "0",
-  img = "0",
+  front_img = "0",
   img_to_dark = TRUE,
   logo_to_white = FALSE
 )
@@ -14,7 +14,7 @@ paged_windmill(
 \arguments{
 \item{logo}{Logo}
 
-\item{img}{Image}
+\item{front_img}{Front image}
 
 \item{img_to_dark}{Darken image}
 
