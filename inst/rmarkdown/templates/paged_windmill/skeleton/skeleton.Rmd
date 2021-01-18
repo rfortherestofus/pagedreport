@@ -5,9 +5,9 @@ author: "Author Name"
 date: "Date"
 output: 
   pagedreport::paged_windmill:
-    front_img: "https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2020/08/math.jpg"
+    front_img: "https://www.hackingwithswift.com/uploads/matrix.jpg"
     logo: "https://mk0rfortheresto0o08q.kinstacdn.com/wp-content/uploads/2020/08/rru-logo-blue.svg"
-    img_to_dark: TRUE
+    img_to_dark: FALSE
     logo_to_white: TRUE
 knit: pagedown::chrome_print
 main-color: "#6cabdd"

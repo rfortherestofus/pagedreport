@@ -1,3 +1,7 @@
+<!-- badges: start -->
+[![R build status](https://github.com/rfortherestofus/pagedreport/workflows/R-CMD-check/badge.svg)](https://github.com/rfortherestofus/pagedreport/actions)
+<!-- badges: end -->
+
 # pagedreport
 
 pagedreport is an R package to help you make beautiful PDF-based reports from RMarkdown. 

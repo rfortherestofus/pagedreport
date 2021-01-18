@@ -17,7 +17,7 @@ License: MIT + file LICENSE
 Imports:
     magick,
     rsvg,
-    pagedown
+    pagedown (== 0.13)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
