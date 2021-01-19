@@ -46,3 +46,15 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           Rscript -e 'pkgdown::deploy_to_branch(new_process = FALSE)'
+
+      - name: Install npm
+        uses: actions/setup-node@v1
+
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          npm install netlify-cli -g
+          netlify deploy --prod --dir .
+
