@@ -9,7 +9,7 @@ pagedreport is an R package to help you make beautiful PDF-based reports from RM
 You can install it with :
 
 ```
-remotes::install_github("rfortherestofus/pagedreport")
+remotes::install_github("rfortherestofus/pagedreport", ref = "main")
 ```
 
 Three templates are available for the moment (each is named after its default image) :
