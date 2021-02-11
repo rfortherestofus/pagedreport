@@ -93,7 +93,7 @@ h1.title {
       content: string(h1-title) " | ";
       font-family: var(--header-font);
       text-align: right;
-      margin-right: -15cm;
+      margin-right: -3cm;
       color: var(--main-color);
     }
 
@@ -112,7 +112,7 @@ h1.title {
     @top-center {
       content: " | " string(h1-text);
       font-family: var(--header-font);
-      margin-left: 1cm;
+      margin-left: -11cm;
       color: var(--main-color);
     }
 
