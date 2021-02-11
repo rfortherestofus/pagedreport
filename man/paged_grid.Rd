@@ -4,10 +4,14 @@
 \alias{paged_grid}
 \title{Function for grid template}
 \usage{
-paged_grid(logo = "0")
+paged_grid(logo = "0", other_css = NULL, ...)
 }
 \arguments{
 \item{logo}{Logo}
+
+\item{other_css}{Add an other CSS}
+
+\item{...}{Arguments passed to pagedown::html_paged}
 }
 \value{
 A pagedown template

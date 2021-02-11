@@ -4,6 +4,8 @@
 #' @param front_img Front image
 #' @param img_to_dark Darken image
 #' @param logo_to_white Tranform logo color to white - logo must be SVG
+#' @param other_css Add an other CSS
+#' @param ... Arguments passed to pagedown::html_paged
 #'
 #' @return A pagedown template
 #' @export
@@ -12,7 +14,9 @@ paged_windmill <-
   function(logo = "0",
            front_img = "0",
            img_to_dark = TRUE,
-           logo_to_white = FALSE) {
+           logo_to_white = FALSE,
+           other_css = NULL,
+           ...) {
     # arguments
     main_css <-
       pkg_resource("css/style_windmill.css")
@@ -56,9 +60,10 @@ paged_windmill <-
 
     # template
     pagedown::html_paged(
-      css = main_css,
+      css = c(main_css, other_css),
       template = pandoc_html,
       front_cover = c(logo, front_img),
-      back_cover = logo
+      back_cover = logo,
+      ...
     )
   }
