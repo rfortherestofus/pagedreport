@@ -16,7 +16,7 @@
     --main-font: "Gelasio";
     --header-font: "Inter";
   }
-  
+
 /* ---------------------- For debugging -------------------- */
 /* two pages in a row if possible on screen */
 @media screen {
@@ -93,7 +93,7 @@ h1.title {
       content: string(h1-title) " | ";
       font-family: var(--header-font);
       text-align: right;
-      margin-right: -15cm;
+      margin-right: -3cm;
       color: var(--main-color);
     }
 
@@ -112,7 +112,7 @@ h1.title {
     @top-center {
       content: " | " string(h1-text);
       font-family: var(--header-font);
-      margin-left: 1cm;
+      margin-left: -11cm;
       color: var(--main-color);
     }
 
@@ -136,29 +136,28 @@ h1.title {
 
 /* ------------------------ Front Cover --------------------- */
 @page:first{
-    margin: 0 0 0 0;
     background-color: #ffffff;
     background-image: url(../utils/line.svg), url(../utils/line.svg), var(--front-cover), var(--front-cover-2);
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
     background-position: 5% 40%, 95% 40%, 4cm 24cm, 0cm 0cm ;
-    background-size:  5cm, 5cm, 3cm, cover;  
+    background-size:  5cm, 5cm, 3cm, cover;
 
     @top-left-corner {
       display: none;
     }
-  
+
     @top-left {
       display: none;
     }
-    
+
     @top-center {
       display: none;
     }
-  
+
     @top-right {
       display: none;
     }
-  
+
     @top-right-corner {
       display: none;
     }
@@ -173,28 +172,17 @@ h1.title {
   }
 
 /* ------------------------ Back Cover ---------------------- */
-.pagedjs_page:last-of-type {
+@page back-cover {
     margin: 0 0 0 0;
     background-image: var(--back-cover), var(--back-cover-2);
     background-repeat: no-repeat, no-repeat;
     background-position: 15cm 23cm, 0cm 0cm;
     background-size: 3cm, cover;
-  }
+}
 
-/* avoiding counter to be printed */
-.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-top-right {
-    display: none;
-  }
-
-.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-top-center {
-    display: none;
-  }
-
-
-.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-top-left {
-    display: none;
-  }
-
+.back-cover {
+  page: back-cover;
+}
 
 /* ----------------------- Table of contents ----------------------- */
 .toc a {
@@ -282,7 +270,7 @@ h1, h2, h3, h4 {
 
 /* ------------------------ Style ----------------------------- */
 /* colors */
-h2, h3, h4 { 
+h2, h3, h4 {
     color: var(--secondary-color)
 }
 
@@ -339,7 +327,7 @@ h1 {
   background-image: url(../utils/line.svg), url(../utils/line.svg);
   background-repeat: no-repeat, no-repeat;
   background-position: 5% 40%, 95% 40%;
-  background-size:  5cm, 5cm;  
+  background-size:  5cm, 5cm;
   margin-right: -17%;
   margin-left: -17%;
   margin-top: -10%;
@@ -352,9 +340,9 @@ h2 {
 /* --------------------- CSS Fragmentation --------------------------- */
 /* page breaks; aka CSS fragmentation */
 .level1 {
-    page: chapter;
+    break-before: page;
   }
-  
+
 .section > h1, .section > h2, .section > h3, .section > h4, .section > h5, .section > h6 {
   break-after: avoid;
 }
@@ -379,4 +367,3 @@ caption {
 img {
   max-width: 100%;
 }
-  

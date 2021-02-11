@@ -242,67 +242,68 @@ h1.title {
     @bottom-left {
       display: none;
     }
-    
+
     @bottom-right-corner{
       display: none;
     }
   }
 
 /* ------------------------ Back Cover ---------------------- */
-.pagedjs_page:last-of-type {
-    margin: 0 0 0 0;
+@page back-cover {
     background-color: var(--main-color);
     background-image: url(../utils/grid_white.png);
     background-repeat: no-repeat;
     background-position: 80% 10%;
     background-size: 20%;
-  }
 
-/* bottom */
-.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-bottom-right {
-    content: "";
-    margin-top: -70%;
-    margin-right: -50%;
-    margin-left: 60%;
-    margin-bottom: -40%;
-    color: #ffffff;
-    background-color: #ffffff;
-    border: none;
-  }
+    @bottom-right {
+        content: "";
+        margin-top: -70%;
+        margin-right: -50%;
+        margin-left: 60%;
+        margin-bottom: -40%;
+        color: #ffffff;
+        background-color: #ffffff;
+        border: none;
+    }
 
-.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-bottom-center {
-  content: "";
-  margin-top: -70%;
-  margin-right: -80%;
-  margin-left: -50%;
-  margin-bottom: -40%;
-  color: #ffffff;
-  background-color: #ffffff;
-  background-image: var(--back-cover) ;
-  background-repeat: no-repeat;
-  background-position: 80% 20%;
-  background-size: 2cm;
-  border: none;
+    @bottom-center {
+        content: "";
+        margin-top: -70%;
+        margin-right: -80%;
+        margin-left: -50%;
+        margin-bottom: -40%;
+        color: #ffffff;
+        background-color: #ffffff;
+        background-image: var(--back-cover) ;
+        background-repeat: no-repeat;
+        background-position: 80% 20%;
+        background-size: 2cm;
+        border: none;
+    }
+
+    @bottom-left {
+        content: "";
+        margin-top: -70%;
+        margin-left: -50%;
+        margin-right: 0%;
+        margin-bottom: -40%;
+        color: #ffffff;
+        background-color: #ffffff;
+        border: none;
+    }
+
+    @left-top {
+        display: none;
+    }
+
+    @right-top {
+        display: none;
+    }
 }
 
-.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-bottom-left {
-  content: "";
-  margin-top: -70%;
-  margin-left: -50%;
-  margin-right: 0%;
-  margin-bottom: -40%;
-  color: #ffffff;
-  background-color: #ffffff;
-  border: none;
-}
-
-/* remove grid */
-.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-left-top {
-  display: none;
-}
-
-.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-right-top {
-  display: none;
+.back-cover {
+  page: back-cover;
 }
 
 /* ------------------------ Fonts ---------------------------- */
@@ -362,7 +363,7 @@ h2 {
 /* --------------------- CSS Fragmentation --------------------------- */
 /* page breaks; aka CSS fragmentation */
 .level1 {
-    page: chapter;
+    break-before: page;
   }
 
   .section > h1, .section > h2, .section > h3, .section > h4, .section > h5, .section > h6 {

@@ -141,7 +141,6 @@ h1.title {
 
 /* ------------------------ Front Cover --------------------- */
 @page:first{
-    margin: 0 0 0 0;
     background-color: #ffffff;
     background-image: var(--front-cover), var(--front-cover-2);
     background-repeat: no-repeat, no-repeat;
@@ -178,19 +177,18 @@ h1.title {
   }
 
 /* ------------------------ Back Cover ---------------------- */
-.pagedjs_page:last-of-type {
+@page back-cover {
     margin: 0 0 0 0;
     background-color: var(--main-color);
     background-image: var(--back-cover);
     background-repeat: no-repeat;
     background-position: 15cm 23cm;
     background-size: 4cm;
-  }
+}
 
-/* avoiding counter to be printed */
-.pagedjs_page:last-of-type .pagedjs_margin.pagedjs_margin-bottom-right {
-    display: none;
-  }
+.back-cover {
+  page: back-cover;
+}
 
 /* ------------------------ Fonts ---------------------------- */
 @import 'https://fonts.googleapis.com/css?family=Gelasio';
@@ -252,7 +250,7 @@ p, ul {
 /* --------------------- CSS Fragmentation --------------------------- */
 /* page breaks; aka CSS fragmentation */
 .level1 {
-    page: chapter;
+    break-before: page;
   }
 
   .section > h1, .section > h2, .section > h3, .section > h4, .section > h5, .section > h6 {
@@ -279,3 +277,4 @@ p, ul {
   img {
     max-width: 100%;
   }
+
