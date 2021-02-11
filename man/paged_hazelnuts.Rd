@@ -9,7 +9,9 @@ paged_hazelnuts(
   front_img = "0",
   back_img = "0",
   img_to_dark = TRUE,
-  logo_to_white = FALSE
+  logo_to_white = FALSE,
+  other_css = NULL,
+  ...
 )
 }
 \arguments{
@@ -22,6 +24,10 @@ paged_hazelnuts(
 \item{img_to_dark}{Darken image}
 
 \item{logo_to_white}{Tranform logo color to white - logo must be SVG}
+
+\item{other_css}{Add an other CSS}
+
+\item{...}{Arguments passed to pagedown::html_paged}
 }
 \value{
 A pagedown template

@@ -1,11 +1,15 @@
 #' Function for grid template
 #'
 #' @param logo Logo
+#' @param other_css Add an other CSS
+#' @param ... Arguments passed to pagedown::html_paged
 #'
 #' @return A pagedown template
 #' @export
 #'
-paged_grid <- function(logo = "0"){
+paged_grid <- function(logo = "0",
+                       other_css = NULL,
+                       ...){
 
   # arguments
   main_css <-
@@ -21,9 +25,10 @@ paged_grid <- function(logo = "0"){
 
   # template
   pagedown::html_paged(
-    css = main_css,
+    css = c(main_css, other_css),
     template = pandoc_html,
     front_cover = logo,
-    back_cover = logo
+    back_cover = logo,
+    ...
   )
 }
