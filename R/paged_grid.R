@@ -25,7 +25,7 @@ paged_grid <- function(logo = "0",
 
   # template
   pagedown::html_paged(
-    css = c(main_css, other_css),
+    css = c(other_css, main_css),
     template = pandoc_html,
     front_cover = logo,
     back_cover = logo,

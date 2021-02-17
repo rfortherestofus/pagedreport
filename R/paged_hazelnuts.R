@@ -74,7 +74,7 @@ paged_hazelnuts <- function(logo = "0",
 
   # template
   pagedown::html_paged(
-    css = c(main_css, other_css),
+    css = c(other_css, main_css),
     template = pandoc_html,
     front_cover = c(logo, front_img),
     back_cover = c(logo, back_img),

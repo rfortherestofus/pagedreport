@@ -60,7 +60,7 @@ paged_windmill <-
 
     # template
     pagedown::html_paged(
-      css = c(main_css, other_css),
+      css = c(other_css, main_css),
       template = pandoc_html,
       front_cover = c(logo, front_img),
       back_cover = logo,
