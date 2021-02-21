@@ -27,3 +27,5 @@ Suggests:
     rmarkdown,
     testthat
 VignetteBuilder: knitr
+URL: https://github.com/rfortherestofus/pagedreport
+BugReports: https://github.com/rfortherestofus/pagedreport/issues
