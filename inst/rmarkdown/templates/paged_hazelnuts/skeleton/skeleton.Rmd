@@ -25,6 +25,15 @@ This file is what a user will see when they select your template. Make sure that
 
 This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
 
+
++ item 1
++ item 2
++ item 3
+
+1. numbered 1
+2. numbered 2
+3. numbered 3
+
 ## Second level {-}
 
 Finally, be sure to remove this message!

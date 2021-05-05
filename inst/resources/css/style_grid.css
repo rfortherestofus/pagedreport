@@ -122,6 +122,10 @@ h1.title {
   margin-left: 15%;
 }
 
+.pagedjs_left_page ol {
+  margin-left: 15%;
+}
+
 .pagedjs_left_page h1 {
   margin-left: 15%;
 }
@@ -188,6 +192,10 @@ h1.title {
 }
 
 .pagedjs_right_page ul {
+  margin-right: 15%;
+}
+
+.pagedjs_right_page ol {
   margin-right: 15%;
 }
 
@@ -310,7 +318,7 @@ h1.title {
 @import 'https://fonts.googleapis.com/css?family=Gelasio';
 @import 'https://fonts.googleapis.com/css?family=Inter';
 
-p, ul, a {
+p, ul, a, ol {
     font-family: var(--main-font);
 }
 
