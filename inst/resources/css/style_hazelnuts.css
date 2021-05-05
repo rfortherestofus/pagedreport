@@ -126,11 +126,11 @@ h1.title {
 }
 
 /* paragraph margins */
-.pagedjs_left_page p,  .pagedjs_left_page ul, .pagedjs_left_page h2, .pagedjs_left_page h3, .pagedjs_left_page h4, .pagedjs_left_page ol {
+.pagedjs_left_page p,  .pagedjs_left_page ul, .pagedjs_left_page h2, .pagedjs_left_page h3, .pagedjs_left_page h4, .pagedjs_left_page ol, .pagedjs_left_page #refs {
   margin-right: 15%
 }
 
-.pagedjs_right_page p,  .pagedjs_right_page ul, .pagedjs_right_page h2, .pagedjs_right_page h3, .pagedjs_right_page h4 ,  .pagedjs_right_page ol {
+.pagedjs_right_page p,  .pagedjs_right_page ul, .pagedjs_right_page h2, .pagedjs_right_page h3, .pagedjs_right_page h4 ,  .pagedjs_right_page ol ,  .pagedjs_right_page #refs {
   margin-left: 15%
 }
 

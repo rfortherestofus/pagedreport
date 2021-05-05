@@ -142,6 +142,10 @@ h1.title {
   margin-left: 15%;
 }
 
+.pagedjs_left_page #refs {
+  margin-left: 15%;
+}
+
 /* right page */
 @page:right {
 
@@ -212,6 +216,10 @@ h1.title {
 }
 
 .pagedjs_right_page h4 {
+  margin-right: 15%;
+}
+
+.pagedjs_right_page #refs {
   margin-right: 15%;
 }
 
