@@ -7,7 +7,7 @@
 #' @return A pagedown template
 #' @export
 #'
-paged_grid <- function(logo = "0",
+paged_morant <- function(logo = "0",
                        other_css = NULL,
                        ...){
 
