@@ -4,6 +4,8 @@
 
 # pagedreport
 
+**Package is now DEPRECATED and won't be updated or fixed anymore due a lack of time. Please look at Quarto options if needed (see that [talk](https://github.com/tvroylandt/user_2024_parametrized_reporting))**
+
 pagedreport is an R package to help you make beautiful PDF-based reports from RMarkdown. 
 
 You can install it with :
